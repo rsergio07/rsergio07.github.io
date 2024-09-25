@@ -44,8 +44,45 @@
             font-weight: 300;
         }
         
+        /* Profile Section */
+        section.profile {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        section.profile h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        section.profile p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* Social Media Icons */
+        .social-media {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .social-media a {
+            margin: 0 15px;
+            display: inline-block;
+        }
+
+        .social-media img {
+            width: 40px;
+            height: auto;
+        }
+
         /* Repository Section */
-        section {
+        section.repo-list {
             max-width: 1200px;
             margin: 40px auto;
             padding: 20px;
@@ -100,15 +137,6 @@
             text-decoration: underline;
         }
 
-        /* Footer Styling */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #2C3E50;
-            color: white;
-            position: relative;
-        }
-
         @media screen and (max-width: 768px) {
             .repo-card {
                 width: 100%;
@@ -124,16 +152,42 @@
         <p>Senior Site Reliability Engineer</p>
     </header>
 
-    <section>
+    <!-- Personal Profile Section -->
+    <section class="profile">
+        <h2>About Me</h2>
+        <p>
+            As a Solutions Architect and Site Reliability Engineer, I possess extensive experience in cloud automation, migration solutions, and transformation. 
+            My top priority is to deliver the best cloud solutions that are both innovative and efficient and that meet the needs and expectations of enterprise customers.
+            I have a solid foundation in designing and implementing cloud architectures that are scalable, secure, and highly available.
+            I am well-versed in working with various cloud technologies and tools such as Terraform, Visual Studio Code, Ansible, Kubernetes, Docker, GitHub, and Jenkins 
+            to automate and orchestrate cloud infrastructure.
+        </p>
+        <p>
+            Additionally, I am well-versed in Agile methodologies, allowing me to work effectively in a fast-paced and dynamic environment. I am passionate about using my 
+            skills and knowledge to help businesses achieve their goals and grow their bottom line.
+        </p>
+        <p>
+            My hobbies include playing and watching sports, outdoor activities, watching movies and TV shows, going to the cinema, and spending time with family.
+        </p>
+
+        <!-- Social Media Icons -->
+        <div class="social-media">
+            <a href="https://github.com/rsergio07" target="_blank">
+                <img src="github-mark.png" alt="GitHub">
+            </a>
+            <a href="https://www.linkedin.com/in/romero-sergio/" target="_blank">
+                <img src="LinkedIn-Blue-14-┬«@2x.png" alt="LinkedIn">
+            </a>
+        </div>
+    </section>
+
+    <!-- Repositories Section -->
+    <section class="repo-list">
         <h2>My GitHub Repositories</h2>
         <div class="repo-list" id="repo-list">
             <!-- Repositories will be dynamically injected here -->
         </div>
     </section>
-
-    <footer>
-        <p>© 2024 Sergio Romero - Senior Site Reliability Engineer</p>
-    </footer>
 
     <!-- GitHub API Script -->
     <script>
