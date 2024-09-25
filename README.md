@@ -32,12 +32,6 @@ A sample project demonstrating the deployment of a Flask application on a local 
 - **CI/CD**: Continuous integration and deployment pipelines.
 - **Packer**: Building immutable infrastructure images.
 
-## 📫 Contact
-
-- [**Email**:](sergiors07@gmail.com)
-- [**GitHub**:](https://github.com/rsergio07)
-- [**LinkedIn**:](https://www.linkedin.com/in/romero-sergio/)
-
 ---
 
 Thanks for visiting! Feel free to explore the repositories and reach out if you have any questions or opportunities for collaboration.
