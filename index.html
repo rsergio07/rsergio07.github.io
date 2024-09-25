@@ -4,54 +4,121 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sergio Romero - My GitHub Repositories</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
     <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Open Sans', sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-        }
-        section {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
             color: #333;
         }
-        ul {
-            list-style-type: none;
-            padding: 0;
+        
+        /* Header Styling */
+        header {
+            background-color: #2C3E50;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
         }
-        li {
-            margin-bottom: 15px;
+        
+        header h1 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 36px;
+            margin-bottom: 10px;
         }
+        
+        header p {
+            font-size: 18px;
+            font-weight: 300;
+        }
+        
+        /* Repository Section */
+        section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .repo-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        /* Repository Card */
+        .repo-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            transition: transform 0.3s ease;
+        }
+        
+        .repo-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .repo-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .repo-card p {
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #666;
+        }
+        
+        .repo-card .repo-meta {
+            font-size: 13px;
+            color: #999;
+        }
+        
         a {
             text-decoration: none;
-            color: #0073e6;
+            color: #2980B9;
         }
+        
         a:hover {
             text-decoration: underline;
         }
+        
+        /* Footer Styling */
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #333;
+            background-color: #2C3E50;
             color: white;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            position: relative;
+        }
+
+        @media screen and (max-width: 768px) {
+            .repo-card {
+                width: 100%;
+                margin-bottom: 20px;
+            }
         }
     </style>
 </head>
@@ -64,15 +131,16 @@
 
     <section>
         <h2>My GitHub Repositories</h2>
-        <ul id="repo-list">
-            <!-- Repositories will be injected here by JavaScript -->
-        </ul>
+        <div class="repo-list" id="repo-list">
+            <!-- Repositories will be dynamically injected here -->
+        </div>
     </section>
 
     <footer>
         <p>© 2024 Sergio Romero - Senior Site Reliability Engineer</p>
     </footer>
 
+    <!-- GitHub API Script -->
     <script>
         // Fetch repository data from GitHub API
         fetch('https://api.github.com/users/rsergio07/repos')
@@ -80,19 +148,22 @@
         .then(repos => {
             const repoList = document.getElementById('repo-list');
             repos.forEach(repo => {
-                const listItem = document.createElement('li');
-                listItem.innerHTML = `
-                    <a href="${repo.html_url}" target="_blank"><strong>${repo.name}</strong></a> - 
-                    ${repo.description ? repo.description : "No description provided."}
-                    <br>⭐ Stars: ${repo.stargazers_count} | 🍴 Forks: ${repo.forks_count}
+                const repoCard = document.createElement('div');
+                repoCard.classList.add('repo-card');
+                
+                repoCard.innerHTML = `
+                    <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
+                    <p>${repo.description ? repo.description : "No description provided."}</p>
+                    <div class="repo-meta">⭐ Stars: ${repo.stargazers_count} | 🍴 Forks: ${repo.forks_count}</div>
                 `;
-                repoList.appendChild(listItem);
+                
+                repoList.appendChild(repoCard);
             });
         })
         .catch(error => {
             console.error('Error fetching repository data:', error);
             const repoList = document.getElementById('repo-list');
-            repoList.innerHTML = `<li>Unable to fetch repositories at this time.</li>`;
+            repoList.innerHTML = `<p>Unable to fetch repositories at this time.</p>`;
         });
     </script>
 
