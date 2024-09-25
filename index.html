@@ -104,6 +104,17 @@
         a:hover {
             text-decoration: underline;
         }
+
+        /* Dropdown Filter */
+        .filter-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .filter-container select {
+            padding: 10px;
+            font-size: 16px;
+        }
         
         /* Footer Styling */
         footer {
@@ -131,6 +142,20 @@
 
     <section>
         <h2>My GitHub Repositories</h2>
+        
+        <div class="filter-container">
+            <label for="category">Filter by Category:</label>
+            <select id="category" onchange="filterRepos()">
+                <option value="all">All</option>
+                <option value="aws">AWS</option>
+                <option value="kubernetes">Kubernetes</option>
+                <option value="terraform">Terraform</option>
+                <option value="docker">Docker</option>
+                <option value="python">Python</option>
+                <option value="ci-cd">CI/CD</option>
+            </select>
+        </div>
+
         <div class="repo-list" id="repo-list">
             <!-- Repositories will be dynamically injected here -->
         </div>
@@ -140,17 +165,38 @@
         <p>© 2024 Sergio Romero - Senior Site Reliability Engineer</p>
     </footer>
 
-    <!-- GitHub API Script -->
+    <!-- GitHub API Script with Category Filtering -->
     <script>
+        let repositories = [];
+
         // Fetch repository data from GitHub API
         fetch('https://api.github.com/users/rsergio07/repos')
         .then(response => response.json())
-        .then(repos => {
+        .then(data => {
+            repositories = data;
+            displayRepos(repositories);
+        })
+        .catch(error => {
+            console.error('Error fetching repository data:', error);
             const repoList = document.getElementById('repo-list');
+            repoList.innerHTML = `<p>Unable to fetch repositories at this time.</p>`;
+        });
+
+        function displayRepos(repos) {
+            const repoList = document.getElementById('repo-list');
+            repoList.innerHTML = '';
             repos.forEach(repo => {
                 const repoCard = document.createElement('div');
                 repoCard.classList.add('repo-card');
                 
+                // Add a category (hard-coded for simplicity, could be added to GitHub repo description)
+                const category = repo.name.includes('terraform') ? 'terraform' :
+                                 repo.name.includes('aws') ? 'aws' :
+                                 repo.name.includes('kubernetes') ? 'kubernetes' :
+                                 repo.name.includes('docker') ? 'docker' : 'ci-cd';
+
+                repoCard.setAttribute('data-category', category);
+
                 repoCard.innerHTML = `
                     <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
                     <p>${repo.description ? repo.description : "No description provided."}</p>
@@ -159,12 +205,20 @@
                 
                 repoList.appendChild(repoCard);
             });
-        })
-        .catch(error => {
-            console.error('Error fetching repository data:', error);
-            const repoList = document.getElementById('repo-list');
-            repoList.innerHTML = `<p>Unable to fetch repositories at this time.</p>`;
-        });
+        }
+
+        function filterRepos() {
+            const selectedCategory = document.getElementById('category').value;
+            const repoCards = document.querySelectorAll('.repo-card');
+
+            repoCards.forEach(card => {
+                if (selectedCategory === 'all' || card.getAttribute('data-category') === selectedCategory) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
     </script>
 
 </body>
