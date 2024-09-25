@@ -1,41 +1,43 @@
-# Sergio Romero - GitHub Repositories Showcase
+# Sergio Romero's GitHub Portfolio
 
-This repository contains the source code for my personal GitHub Pages site, which showcases my public repositories. The website dynamically fetches repository information using the GitHub API and allows visitors to filter projects by categories such as AWS, Kubernetes, Terraform, Docker, and more.
+Welcome to my GitHub! I'm **Sergio Romero**, a **Senior Site Reliability Engineer** with a strong background in cloud automation, infrastructure as code (IaC), and migration solutions. Here, you’ll find a collection of my repositories showcasing various projects, tools, and configurations related to DevOps, cloud platforms, automation, and much more.
 
-## Features
+## 🔧 Skills & Technologies
 
-- **Real-Time Data**: The site fetches and displays my latest GitHub repositories using the GitHub API.
-- **Category Filtering**: Visitors can filter repositories by categories like AWS, Terraform, Kubernetes, CI/CD, and more.
-- **Responsive Design**: The website is fully responsive, providing a seamless experience across desktop and mobile devices.
-- **Modern Design**: Uses Google Fonts and a card-based layout for a clean and professional look.
+- **Cloud Platforms**: AWS, Kubernetes, OpenShift
+- **Automation & Orchestration**: Terraform, Ansible, Docker, Jenkins
+- **Development Tools**: GitHub, Git, Visual Studio Code
+- **Monitoring & Observability**: Prometheus, Grafana, Instana
+- **CI/CD**: Jenkins, GitHub Actions, AWS CodePipeline
 
-## How It Works
+## 🚀 Featured Repositories
 
-- The site is hosted on [GitHub Pages](https://rsergio07.github.io/) and automatically updates with real-time data from my GitHub repositories.
-- JavaScript is used to fetch repository data from the [GitHub API](https://developer.github.com/v3/), which is then displayed dynamically in a card-based layout.
-- Users can filter repositories by selecting a category from a dropdown list, which filters the projects based on topics assigned in GitHub.
+### [AWS Terraform Deployment](https://github.com/rsergio07/aws-terraform-deployment)
+A repository containing Terraform configurations to deploy AWS infrastructure, including EC2 instances, VPCs, subnets, and security groups.
 
-## Technologies Used
+### [Learn Terraform - Provision EKS Cluster](https://github.com/rsergio07/Learn-terraform-provision-eks-cluster)
+A tutorial repository demonstrating how to deploy an EKS cluster using Terraform. This project includes configurations for a highly available Kubernetes cluster on AWS.
 
-- **HTML5 & CSS3**: For the layout and styling of the site.
-- **JavaScript**: For fetching and displaying repositories in real-time.
-- **GitHub API**: To retrieve repository data.
-- **Google Fonts**: For modern typography.
-- **GitHub Pages**: Hosting the site.
+### [Packer on AWS](https://github.com/rsergio07/packer-on-aws)
+This repository contains configurations for building machine images on AWS using HashiCorp Packer.
 
-## Repository Structure
+### [Flask App on EKS](https://github.com/rsergio07/flask-app-on-eks)
+A sample project demonstrating the deployment of a Flask application on a local Kubernetes cluster using Minikube and Helm.
 
-- `index.html`: The main HTML file containing the structure and JavaScript code to fetch repositories.
-- `README.md`: This file, which provides an overview of the repository.
-- `style.css`: (Optional) External stylesheet if further customizations are added.
-  
-## How to Use
+## 📂 Repository Categories
 
-To explore the repositories showcased on this site, simply visit [my GitHub Pages site](https://rsergio07.github.io/) and use the dropdown to filter by category. The repositories displayed are always up-to-date, as they are fetched directly from GitHub.
+- **Terraform**: Infrastructure automation using Terraform.
+- **AWS**: Cloud deployments and configurations on AWS.
+- **Kubernetes**: Deployment and management of containerized applications.
+- **CI/CD**: Continuous integration and deployment pipelines.
+- **Packer**: Building immutable infrastructure images.
 
-## Contact
+## 📫 Contact
 
-Feel free to reach out if you have any questions or feedback! You can connect with me on [LinkedIn](https://www.linkedin.com/in/romero-sergio/) or explore my work on [GitHub](https://github.com/rsergio07).
+- **Email**: sergiors07@gmail.com
+- **GitHub**: [rsergio07](https://github.com/rsergio07)
+- **LinkedIn**: [Sergio Romero](https://www.linkedin.com/in/romero-sergio/)
 
 ---
-© 2024 Sergio Romero - Senior Site Reliability Engineer
+
+Thanks for visiting! Feel free to explore the repositories and reach out if you have any questions or opportunities for collaboration.
