@@ -64,18 +64,37 @@
 
     <section>
         <h2>My GitHub Repositories</h2>
-        <ul>
-            <li><a href="https://github.com/rsergio07/aws-terraform-deployment" target="_blank">AWS Terraform Deployment</a> - Terraform configurations to deploy AWS infrastructure including EC2 instances, VPC, and security groups.</li>
-            <li><a href="https://github.com/rsergio07/Local-k8s-helm-nginx" target="_blank">Local k8s Helm Nginx</a> - A project demonstrating the deployment of an Nginx application on a local Kubernetes cluster.</li>
-            <li><a href="https://github.com/rsergio07/flask-app-on-eks" target="_blank">Flask App on EKS</a> - Terraform configuration and application files for deploying a Flask app on an EKS cluster in AWS.</li>
-            <li><a href="https://github.com/rsergio07/devops-projects" target="_blank">DevOps Projects</a> - Real-world projects for aspiring DevOps Engineers [Beginner to Advanced].</li>
-            <li><a href="https://github.com/rsergio07/the-book-of-secret-knowledge" target="_blank">The Book of Secret Knowledge</a> - A collection of inspiring lists, manuals, cheatsheets, and CLI/web tools.</li>
+        <ul id="repo-list">
+            <!-- Repositories will be injected here by JavaScript -->
         </ul>
     </section>
 
     <footer>
         <p>© 2024 Sergio Romero - Senior Site Reliability Engineer</p>
     </footer>
+
+    <script>
+        // Fetch repository data from GitHub API
+        fetch('https://api.github.com/users/rsergio07/repos')
+        .then(response => response.json())
+        .then(repos => {
+            const repoList = document.getElementById('repo-list');
+            repos.forEach(repo => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <a href="${repo.html_url}" target="_blank"><strong>${repo.name}</strong></a> - 
+                    ${repo.description ? repo.description : "No description provided."}
+                    <br>⭐ Stars: ${repo.stargazers_count} | 🍴 Forks: ${repo.forks_count}
+                `;
+                repoList.appendChild(listItem);
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching repository data:', error);
+            const repoList = document.getElementById('repo-list');
+            repoList.innerHTML = `<li>Unable to fetch repositories at this time.</li>`;
+        });
+    </script>
 
 </body>
 </html>
