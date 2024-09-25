@@ -1,37 +1,32 @@
-# Sergio Romero's GitHub Portfolio
+# Sergio Romero - Personal Website and GitHub Repositories Showcase
 
-Welcome to my GitHub! I'm **Sergio Romero**, a **Senior Site Reliability Engineer** with a strong background in cloud automation, infrastructure as code (IaC), and migration solutions. Here, you’ll find a collection of my repositories showcasing various projects, tools, and configurations related to DevOps, cloud platforms, automation, and much more.
+This repository contains the source code for my personal GitHub Pages site. The website serves as both a professional portfolio and a dynamic showcase of my public repositories. It includes a brief introduction about myself, my contact information (GitHub and LinkedIn), and a display of my repositories.
 
-## 🔧 Skills & Technologies
+## Features
 
-- **Cloud Platforms**: AWS, Kubernetes, OpenShift
-- **Automation & Orchestration**: Terraform, Ansible, Docker, Jenkins
-- **Development Tools**: GitHub, Git, Visual Studio Code
-- **Monitoring & Observability**: Prometheus, Grafana, Instana
-- **CI/CD**: Jenkins, GitHub Actions, AWS CodePipeline
+- **Personal Introduction**: A brief description of who I am and what I do, including my professional background as a Senior Site Reliability Engineer.
+- **Contact Information**: Links to my GitHub and LinkedIn profiles are readily available for visitors to connect with me.
+- **Real-Time Repository Data**: The site uses the GitHub API to fetch and display up-to-date information about my public repositories.
+- **Responsive Design**: The website is fully responsive and adapts smoothly across desktop and mobile devices.
+- **Modern Layout**: The site uses Google Fonts and a card-based layout for a professional and clean appearance.
 
-## 🚀 Featured Repositories
+## How It Works
 
-### [AWS Terraform Deployment](https://github.com/rsergio07/aws-terraform-deployment)
-A repository containing Terraform configurations to deploy AWS infrastructure, including EC2 instances, VPCs, subnets, and security groups.
+- **Hosting**: The site is hosted on [GitHub Pages](https://rsergio07.github.io/) and updates automatically with real-time data from my GitHub repositories.
+- **Dynamic Repository Display**: The website uses JavaScript to fetch repository data from the [GitHub API](https://developer.github.com/v3/), displaying repositories dynamically in a card-based format.
 
-### [Learn Terraform - Provision EKS Cluster](https://github.com/rsergio07/Learn-terraform-provision-eks-cluster)
-A tutorial repository demonstrating how to deploy an EKS cluster using Terraform. This project includes configurations for a highly available Kubernetes cluster on AWS.
+## Technologies Used
 
-### [Packer on AWS](https://github.com/rsergio07/packer-on-aws)
-This repository contains configurations for building machine images on AWS using HashiCorp Packer.
+- **HTML5 & CSS3**: For the layout and styling of the site.
+- **JavaScript**: For fetching and displaying repository data in real-time.
+- **GitHub API**: To retrieve and update repository data.
+- **Google Fonts**: For typography.
+- **GitHub Pages**: For hosting the site.
 
-### [Flask App on EKS](https://github.com/rsergio07/flask-app-on-eks)
-A sample project demonstrating the deployment of a Flask application on a local Kubernetes cluster using Minikube and Helm.
+## How to Use
 
-## 📂 Repository Categories
-
-- **Terraform**: Infrastructure automation using Terraform.
-- **AWS**: Cloud deployments and configurations on AWS.
-- **Kubernetes**: Deployment and management of containerized applications.
-- **CI/CD**: Continuous integration and deployment pipelines.
-- **Packer**: Building immutable infrastructure images.
+To explore my website, visit [my GitHub Pages site](https://rsergio07.github.io/). You can view a brief introduction about myself, access my contact information, and explore my public repositories.
 
 ---
 
-Thanks for visiting! Feel free to explore the repositories and reach out if you have any questions or opportunities for collaboration.
+Feel free to explore the repositories and get in touch with me via GitHub or LinkedIn if you have any questions or would like to collaborate.
