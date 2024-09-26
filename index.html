@@ -171,16 +171,24 @@
         </p>
 
         <style>
+            .social-icons {
+                display: flex;
+                justify-content: center; /* Centers the icons horizontally */
+                align-items: center; /* Aligns the icons vertically */
+                margin: 20px 0; /* Adds some spacing above and below */
+            }
+        
             .social-icons img {
-                width: 40px; /* Set the same width for all logos */
-                height: 40px; /* Set the same height for all logos */
-                margin: 0 10px; /* Add spacing between logos */
+                width: 40px; /* Adjust the size as needed */
+                height: 40px;
+                margin: 0 15px; /* Spacing between the icons */
             }
         </style>
         
         <section class="profile">
-            <h2>Connect with Me</h2>
-            <p class="social-icons">
+            <h2 style="text-align: center;">Social Media</h2> <!-- Centers the heading -->
+        
+            <div class="social-icons">
                 <a href="https://github.com/rsergio07" target="_blank">
                     <img src="assets/icons/github.png" alt="GitHub">
                 </a>
@@ -190,8 +198,8 @@
                 <a href="https://www.credly.com/users/rsergio" target="_blank">
                     <img src="assets/icons/credly.png" alt="Credly">
                 </a>
-            </p>
-        </section>
+            </div>
+        </section>        
 
     <!-- Repositories Section -->
     <section class="repo-list">
