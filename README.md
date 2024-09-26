@@ -1,11 +1,11 @@
 # Sergio Romero - Personal Website and GitHub Repositories Showcase
 
-This repository contains the source code for my personal GitHub Pages site. The website serves as both a professional portfolio and a dynamic showcase of my public repositories. It includes a brief introduction about myself, my contact information (GitHub and LinkedIn), and a display of my repositories.
+This repository contains the source code for my personal GitHub Pages site, serving as my professional portfolio. It dynamically fetches and displays information about my experience in cloud computing, automation, Kubernetes, Terraform, and more, offering visitors an easy way to explore my expertise and connect with me. It includes a brief introduction about myself, my contact information (GitHub, LinkedIn and Credly), and a display of my repositories.
 
 ## Features
 
 - **Personal Introduction**: A brief description of who I am and what I do, including my professional background as a Senior Site Reliability Engineer.
-- **Contact Information**: Links to my GitHub and LinkedIn profiles are readily available for visitors to connect with me.
+- **Contact Information**: Links to my GitHub, LinkedIn and Credly profiles are readily available for visitors to connect with me.
 - **Real-Time Repository Data**: The site uses the GitHub API to fetch and display up-to-date information about my public repositories.
 - **Responsive Design**: The website is fully responsive and adapts smoothly across desktop and mobile devices.
 - **Modern Layout**: The site uses Google Fonts and a card-based layout for a professional and clean appearance.
