@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sergio Romero - My GitHub Repositories</title>
+    <title>Sergio Romero - Professional Portfolio</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -24,26 +24,45 @@
             padding: 0;
             color: #333;
         }
-        
+
         /* Header Styling */
         header {
             background-color: #2C3E50;
             color: white;
             padding: 30px 0;
             text-align: center;
+            position: relative;
         }
-        
+
         header h1 {
             font-family: 'Roboto', sans-serif;
             font-size: 36px;
             margin-bottom: 10px;
         }
-        
+
         header p {
             font-size: 18px;
             font-weight: 300;
         }
-        
+
+        /* Social Media Icons in Header */
+        .social-media {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .social-media a {
+            margin: 0 10px;
+            display: inline-block;
+        }
+
+        .social-media img {
+            width: 30px;
+            height: auto;
+        }
+
         /* Profile Section */
         section.profile {
             max-width: 1200px;
@@ -65,83 +84,34 @@
             margin-bottom: 20px;
         }
 
-        /* Social Media Icons */
-        .social-media {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .social-media a {
-            margin: 0 15px;
-            display: inline-block;
-        }
-
-        .social-media img {
-            width: 40px;
-            height: auto;
-        }
-
-        /* Repository Section */
-        section.repo-list {
+        /* Skills Section */
+        section.skills {
             max-width: 1200px;
             margin: 40px auto;
             padding: 20px;
-        }
-        
-        h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 28px;
-            font-family: 'Roboto', sans-serif;
-        }
-        
-        .repo-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-        
-        /* Repository Card */
-        .repo-card {
             background-color: white;
-            border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            width: 300px;
-            transition: transform 0.3s ease;
-        }
-        
-        .repo-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .repo-card h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
-            font-family: 'Roboto', sans-serif;
-        }
-        
-        .repo-card p {
-            font-size: 14px;
-            margin-bottom: 10px;
-            color: #666;
-        }
-        
-        a {
-            text-decoration: none;
-            color: #2980B9;
-        }
-        
-        a:hover {
-            text-decoration: underline;
+            border-radius: 8px;
         }
 
-        @media screen and (max-width: 768px) {
-            .repo-card {
-                width: 100%;
-                margin-bottom: 20px;
-            }
+        section.skills h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        section.skills ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        section.skills li {
+            margin-bottom: 15px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        section.skills strong {
+            color: #2980B9;
         }
     </style>
 </head>
@@ -150,6 +120,19 @@
     <header>
         <h1>Sergio Romero</h1>
         <p>Senior Site Reliability Engineer</p>
+
+        <!-- Social Media Icons in Header -->
+        <div class="social-media">
+            <a href="https://github.com/rsergio07" target="_blank">
+                <img src="assets/icons/github.png" alt="GitHub">
+            </a>
+            <a href="https://www.linkedin.com/in/romero-sergio/" target="_blank">
+                <img src="assets/icons/linkedin.png" alt="LinkedIn">
+            </a>
+            <a href="https://www.credly.com/users/rsergio" target="_blank">
+                <img src="assets/icons/credly.png" alt="Credly">
+            </a>
+        </div>
     </header>
 
     <!-- Personal Profile Section -->
@@ -164,79 +147,24 @@
         <p>
             My hobbies include sports, outdoor activities, movies, and spending time with family.
         </p>
-
-        <style>
-            .social-icons {
-                display: flex;
-                justify-content: center; /* Centers the icons horizontally */
-                align-items: center; /* Aligns the icons vertically */
-                margin: 20px 0; /* Adds some spacing above and below */
-            }
-        
-            .social-icons img {
-                height: 40px; /* Set a consistent height for all icons */
-                width: auto;  /* Keep the aspect ratio */
-                margin: 0 15px; /* Spacing between the icons */
-            }
-        </style>
-        
-        <section class="profile">
-            <h2 style="text-align: center;">Social Media</h2> <!-- Centers the heading -->
-        
-            <div class="social-icons">
-                <a href="https://github.com/rsergio07" target="_blank">
-                    <img src="assets/icons/github.png" alt="GitHub">
-                </a>
-                <a href="https://www.linkedin.com/in/romero-sergio/" target="_blank">
-                    <img src="assets/icons/linkedin.png" alt="LinkedIn">
-                </a>
-                <a href="https://www.credly.com/users/rsergio" target="_blank">
-                    <img src="assets/icons/credly.png" alt="Credly">
-                </a>
-            </div>
-        </section>        
-
-    <!-- Repositories Section -->
-    <section class="repo-list">
-        <h2>My GitHub Repositories</h2>
-        <div class="repo-list" id="repo-list">
-            <!-- Repositories will be dynamically injected here -->
-        </div>
     </section>
 
-    <!-- GitHub API Script -->
-    <script>
-        let repositories = [];
-
-        // Fetch repository data from GitHub API
-        fetch('https://api.github.com/users/rsergio07/repos')
-        .then(response => response.json())
-        .then(data => {
-            repositories = data;
-            displayRepos(repositories);
-        })
-        .catch(error => {
-            console.error('Error fetching repository data:', error);
-            const repoList = document.getElementById('repo-list');
-            repoList.innerHTML = `<p>Unable to fetch repositories at this time.</p>`;
-        });
-
-        function displayRepos(repos) {
-            const repoList = document.getElementById('repo-list');
-            repoList.innerHTML = '';
-            repos.forEach(repo => {
-                const repoCard = document.createElement('div');
-                repoCard.classList.add('repo-card');
-
-                repoCard.innerHTML = `
-                    <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
-                    <p>${repo.description ? repo.description : "No description provided."}</p>
-                `;
-                
-                repoList.appendChild(repoCard);
-            });
-        }
-    </script>
+    <!-- Skills Section -->
+    <section class="skills">
+        <h2>Top Skills</h2>
+        <ul>
+            <li><strong>Cloud Infrastructure Management</strong> - Expertise in designing and managing cloud infrastructures using AWS, IBM Cloud, and VMware.</li>
+            <li><strong>Automation and Infrastructure as Code (IaC)</strong> - Proficient in Terraform, Ansible, and Jenkins for automating infrastructure deployment and processes.</li>
+            <li><strong>Kubernetes & Containerization</strong> - Skilled in deploying and managing containerized applications with Kubernetes, Docker, and Openshift.</li>
+            <li><strong>Continuous Integration and Continuous Deployment (CI/CD)</strong> - Experienced in managing CI/CD pipelines using Jenkins and GitHub.</li>
+            <li><strong>Performance Optimization & Monitoring</strong> - Expertise in monitoring and optimizing system performance using Prometheus, Grafana, and Instana.</li>
+            <li><strong>Site Reliability Engineering (SRE)</strong> - Focused on enhancing system reliability and availability through proactive monitoring and automation.</li>
+            <li><strong>System Architecture Design</strong> - Strong background in designing resilient, scalable system architectures for enterprise applications.</li>
+            <li><strong>Disaster Recovery & System Security</strong> - Skilled in planning and implementing disaster recovery strategies and ensuring security compliance.</li>
+            <li><strong>Agile Methodologies</strong> - Proficient in Agile and DevOps practices for delivering high-quality results in fast-paced environments.</li>
+            <li><strong>Leadership & Mentorship</strong> - Experience mentoring engineers and leading cross-functional teams to achieve business goals.</li>
+        </ul>
+    </section>
 
 </body>
 </html>
