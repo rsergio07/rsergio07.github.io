@@ -1,32 +1,40 @@
-# Sergio Romero - Personal Website and GitHub Repositories Showcase
+# Sergio Romero - Professional Portfolio
 
-This repository contains the source code for my personal GitHub Pages site, serving as my professional portfolio. It dynamically fetches and displays information about my experience in cloud computing, automation, Kubernetes, Terraform, and more, offering visitors an easy way to explore my expertise and connect with me. It includes a brief introduction about myself, my contact information (GitHub, LinkedIn and Credly), and a display of my repositories.
+Welcome to the repository for my personal portfolio, which showcases my expertise in Site Reliability Engineering (SRE) and Solutions Architecture. This project hosts the source code for my GitHub Pages site, where I present my work, skills, and public GitHub repositories.
 
 ## Features
 
-- **Personal Introduction**: A brief description of who I am and what I do, including my professional background as a Senior Site Reliability Engineer.
-- **Contact Information**: Links to my GitHub, LinkedIn and Credly profiles are readily available for visitors to connect with me.
-- **Real-Time Repository Data**: The site uses the GitHub API to fetch and display up-to-date information about my public repositories.
-- **Responsive Design**: The website is fully responsive and adapts smoothly across desktop and mobile devices.
-- **Modern Layout**: The site uses Google Fonts and a card-based layout for a professional and clean appearance.
-
-## How It Works
-
-- **Hosting**: The site is hosted on [GitHub Pages](https://rsergio07.github.io/) and updates automatically with real-time data from my GitHub repositories.
-- **Dynamic Repository Display**: The website uses JavaScript to fetch repository data from the [GitHub API](https://developer.github.com/v3/), displaying repositories dynamically in a card-based format.
+- **Social Media Integration**: Links to my GitHub, LinkedIn, and Credly profiles for networking and certifications.
+- **Skills Showcase**: A detailed list of my top skills in cloud infrastructure, automation, and DevOps.
+- **Dynamic GitHub Repositories**: Real-time display of my public repositories fetched using the GitHub API, allowing visitors to explore my work.
 
 ## Technologies Used
 
-- **HTML5 & CSS3**: For the layout and styling of the site.
-- **JavaScript**: For fetching and displaying repository data in real-time.
-- **GitHub API**: To retrieve and update repository data.
-- **Google Fonts**: For typography.
-- **GitHub Pages**: For hosting the site.
+- **HTML5 & CSS3**: The structure and styling of the portfolio.
+- **JavaScript**: Used to fetch and display repositories dynamically from the GitHub API.
+- **GitHub Pages**: The platform hosting this project.
+- **GitHub API**: Retrieves real-time data on my public repositories.
 
-## How to Use
+## How It Works
 
-To explore my website, visit [my GitHub Pages site](https://rsergio07.github.io/). You can view a brief introduction about myself, access my contact information, and explore my public repositories.
+The portfolio is a static website hosted on [GitHub Pages](https://rsergio07.github.io). It includes an about me section, a list of top skills, and a section for dynamically fetched GitHub repositories. The repository data is retrieved via the GitHub API and displayed in a card-based layout.
+
+### How to Run Locally
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/rsergio07/rsergio07.github.io.git
+    ```
+2. Open the `index.html` file in your browser to view the portfolio.
+
+## Contact
+
+Feel free to reach out to me via my social media profiles:
+
+- [GitHub](https://github.com/rsergio07)
+- [LinkedIn](https://www.linkedin.com/in/romero-sergio/)
+- [Credly](https://www.credly.com/users/rsergio)
 
 ---
 
-Feel free to explore the repositories and get in touch with me via GitHub or LinkedIn if you have any questions or would like to collaborate.
+Thanks for visiting my portfolio!
