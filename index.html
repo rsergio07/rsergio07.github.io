@@ -57,44 +57,47 @@
         section.profile h2 {
             font-size: 28px;
             margin-bottom: 15px;
-            text-align: center; /* Centered "About Me" title */
+            text-align: center;
         }
 
         section.profile p {
             font-size: 16px;
             line-height: 1.6;
             margin-bottom: 20px;
-            text-align: center; /* Centered "About Me" content */
+            text-align: center;
         }
 
         /* Top Skills Section */
-        .skills {
+        section.skills {
+            max-width: 1200px;
+            margin: 40px auto;
             padding: 20px;
-            background-color: #f4f4f9;
-            color: #333;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
-            margin-top: 30px;
         }
 
-        .skills h2 {
-            text-align: center;
-            color: #0ea5e9;
-            font-size: 2rem;
-        }
-
-        .skills ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        .skills li {
+        section.skills h2 {
+            font-size: 28px;
             margin-bottom: 15px;
-            font-size: 1.1rem;
-            line-height: 1.6;
+            text-align: center;
+            color: #333;
         }
 
-        .skills strong {
-            color: #f97316;
+        section.skills ul {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        section.skills li {
+            margin-bottom: 15px;
+        }
+
+        section.skills strong {
+            color: #2980B9; /* Consistent color for strong text */
         }
 
         /* Repository Section */
@@ -164,8 +167,8 @@
         footer {
             margin-top: 50px;
             padding: 20px;
-            background-color: white; /* Changed to white */
-            color: #333; /* Updated text color to maintain contrast */
+            background-color: white;
+            color: #333;
             text-align: center;
         }
 
