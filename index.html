@@ -16,7 +16,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
             font-family: 'Open Sans', sans-serif;
             background-color: #f4f4f4;
@@ -24,7 +24,7 @@
             padding: 0;
             color: #333;
         }
-
+        
         /* Header Styling */
         header {
             background-color: #2C3E50;
@@ -32,26 +32,16 @@
             padding: 30px 0;
             text-align: center;
         }
-
+        
         header h1 {
             font-family: 'Roboto', sans-serif;
             font-size: 36px;
             margin-bottom: 10px;
         }
-
+        
         header p {
             font-size: 18px;
             font-weight: 300;
-        }
-
-        .social-media img {
-            background-color: white; /* Keep the white background */
-            border-radius: 15px; /* Less circular, rounded corners instead */
-            padding: 5px; /* Reduce the padding for a sleeker look */
-            border: 1px solid #ccc; /* Softer border */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lighter shadow */
-            width: 35px; /* Slightly smaller size */
-            height: auto;
         }
 
         /* Profile Section */
@@ -62,50 +52,19 @@
             background-color: white;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
-            text-align: center;
         }
 
         section.profile h2 {
             font-size: 28px;
             margin-bottom: 15px;
+            text-align: center; /* Centered "About Me" title */
         }
 
         section.profile p {
             font-size: 16px;
             line-height: 1.6;
             margin-bottom: 20px;
-        }
-
-        /* Skills Section */
-        section.skills {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-
-        section.skills h2 {
-            font-size: 28px;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        section.skills ul {
-            list-style-type: none;
-            padding-left: 0;
-            text-align: left;
-        }
-
-        section.skills li {
-            margin-bottom: 15px;
-            font-size: 16px;
-            line-height: 1.6;
-        }
-
-        section.skills strong {
-            color: #2980B9;
+            text-align: center; /* Centered "About Me" content */
         }
 
         /* Repository Section */
@@ -121,14 +80,14 @@
             font-size: 28px;
             font-family: 'Roboto', sans-serif;
         }
-
+        
         .repo-list {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
         }
-
+        
         /* Repository Card */
         .repo-card {
             background-color: white;
@@ -138,28 +97,28 @@
             width: 300px;
             transition: transform 0.3s ease;
         }
-
+        
         .repo-card:hover {
             transform: translateY(-5px);
         }
-
+        
         .repo-card h3 {
             font-size: 20px;
             margin-bottom: 10px;
             font-family: 'Roboto', sans-serif;
         }
-
+        
         .repo-card p {
             font-size: 14px;
             margin-bottom: 10px;
             color: #666;
         }
-
+        
         a {
             text-decoration: none;
             color: #2980B9;
         }
-
+        
         a:hover {
             text-decoration: underline;
         }
@@ -170,6 +129,29 @@
                 margin-bottom: 20px;
             }
         }
+
+        /* Footer Styling */
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #2C3E50;
+            color: white;
+            text-align: center;
+        }
+
+        .social-icons {
+            margin: 20px 0;
+        }
+
+        .social-icons a {
+            margin: 0 15px;
+            display: inline-block;
+        }
+
+        .social-icons img {
+            width: 40px;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -177,19 +159,6 @@
     <header>
         <h1>Sergio Romero</h1>
         <p>Senior Site Reliability Engineer</p>
-
-        <!-- Social Media Icons -->
-        <div class="social-media">
-            <a href="https://github.com/rsergio07" target="_blank">
-                <img src="assets/icons/github.png" alt="GitHub">
-            </a>
-            <a href="https://www.linkedin.com/in/romero-sergio/" target="_blank">
-                <img src="assets/icons/linkedin.png" alt="LinkedIn">
-            </a>
-            <a href="https://www.credly.com/users/rsergio" target="_blank">
-                <img src="assets/icons/credly.png" alt="Credly">
-            </a>
-        </div>
     </header>
 
     <!-- Personal Profile Section -->
@@ -204,23 +173,7 @@
         <p>
             My hobbies include sports, outdoor activities, movies, and spending time with family.
         </p>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="skills">
-        <h2>Top Skills</h2>
-        <ul>
-            <li><strong>Cloud Infrastructure Management</strong> - Expertise in designing and managing cloud infrastructures using AWS, IBM Cloud, and VMware.</li>
-            <li><strong>Automation and Infrastructure as Code (IaC)</strong> - Proficient in Terraform, Ansible, and Jenkins for automating infrastructure deployment and processes.</li>
-            <li><strong>Kubernetes & Containerization</strong> - Skilled in deploying and managing containerized applications with Kubernetes, Docker, and Openshift.</li>
-            <li><strong>Continuous Integration and Continuous Deployment (CI/CD)</strong> - Experienced in managing CI/CD pipelines using Jenkins and GitHub.</li>
-            <li><strong>Performance Optimization & Monitoring</strong> - Expertise in monitoring and optimizing system performance using Prometheus, Grafana, and Instana.</li>
-            <li><strong>Site Reliability Engineering (SRE)</strong> - Focused on enhancing system reliability and availability through proactive monitoring and automation.</li>
-            <li><strong>System Architecture Design</strong> - Strong background in designing resilient, scalable system architectures for enterprise applications.</li>
-            <li><strong>Agile Methodologies</strong> - Proficient in Agile and DevOps practices for delivering high-quality results in fast-paced environments.</li>
-            <li><strong>Leadership & Mentorship</strong> - Experience mentoring engineers and leading cross-functional teams to achieve business goals.</li>
-        </ul>
-    </section>
+    </section>        
 
     <!-- Repositories Section -->
     <section class="repo-list">
@@ -229,6 +182,22 @@
             <!-- Repositories will be dynamically injected here -->
         </div>
     </section>
+
+    <!-- Social Media Icons in Footer -->
+    <footer>
+        <h2>Connect with Me</h2>
+        <div class="social-icons">
+            <a href="https://github.com/rsergio07" target="_blank">
+                <img src="assets/icons/github.png" alt="GitHub">
+            </a>
+            <a href="https://www.linkedin.com/in/romero-sergio/" target="_blank">
+                <img src="assets/icons/linkedin.png" alt="LinkedIn">
+            </a>
+            <a href="https://www.credly.com/users/rsergio" target="_blank">
+                <img src="assets/icons/credly.png" alt="Credly">
+            </a>
+        </div>
+    </footer>
 
     <!-- GitHub API Script -->
     <script>
@@ -249,19 +218,16 @@
 
         function displayRepos(repos) {
             const repoList = document.getElementById('repo-list');
-            repoList.innerHTML = ''; // Clear any existing content
-
+            repoList.innerHTML = '';
             repos.forEach(repo => {
                 const repoCard = document.createElement('div');
                 repoCard.classList.add('repo-card');
 
-                // Create the repository card content
                 repoCard.innerHTML = `
                     <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
                     <p>${repo.description ? repo.description : "No description provided."}</p>
                 `;
-
-                // Append the new repo card to the list
+                
                 repoList.appendChild(repoCard);
             });
         }
