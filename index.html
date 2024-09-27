@@ -31,17 +31,36 @@
             color: white;
             padding: 30px 0;
             text-align: center;
+            font-family: 'Open Sans', sans-serif;
         }
-        
+
         header h1 {
             font-family: 'Roboto', sans-serif;
             font-size: 36px;
             margin-bottom: 10px;
         }
-        
+
         header p {
-            font-size: 18px;
+           font-size: 18px;
             font-weight: 300;
+        }
+
+        .personal-info {
+            margin-top: 15px;
+            font-size: 16px;
+        }
+
+        .personal-info a {
+           color: #0ea5e9;
+            text-decoration: none;
+        }
+
+        .personal-info span {
+           margin: 0 10px;
+        }
+
+        .personal-info span a:hover {
+           text-decoration: underline;
         }
 
         /* Profile Section */
@@ -192,6 +211,13 @@
     <header>
         <h1>Sergio Romero Sanchez</h1>
         <p>Senior Site Reliability Engineer</p>
+        <div class="personal-info">
+            <p>
+                <span><a href="https://github.com/rsergio07" target="_blank">GitHub</a></span> |
+                <span><a href="https://www.linkedin.com/in/romero-sergio/" target="_blank">LinkedIn</a></span> |
+                <span><a href="https://www.credly.com/users/rsergio" target="_blank">Credly</a></span>
+            </p>
+        </div>
     </header>
 
     <!-- Personal Profile Section -->
