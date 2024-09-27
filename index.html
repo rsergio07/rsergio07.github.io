@@ -52,22 +52,23 @@
         /* Social Media Icons Styling */
         .social-icons {
             display: flex;
-            justify-content: center;
-            gap: 40px;
+            justify-content: center; /* Centers the icons horizontally */
+            gap: 40px;               /* Space between each icon */
             margin-top: 20px;
+            flex-wrap: nowrap;       /* Prevents wrapping on smaller screens */
         }
 
         .social-icons a {
             display: flex;
-            align-items: center;
-            gap: 8px;
-            text-decoration: none;
-            color: white;
-            font-family: 'Open Sans', sans-serif;
+            align-items: center;     /* Vertically align icon and text */
+            gap: 8px;                /* Space between icon and text */
+            text-decoration: none;   /* Remove underline from links */
+            color: white;            /* Set text color to white */
+            font-family: 'Open Sans', sans-serif; /* Font for text */
         }
 
         .social-icons img {
-            width: 48px;
+            width: 48px;  /* Ensuring consistent size */
             height: auto;
         }
 
@@ -75,10 +76,11 @@
             font-size: 16px;
         }
 
+        /* Responsive adjustments */
         @media screen and (max-width: 768px) {
             .social-icons {
-                flex-direction: column;
-                align-items: center;
+                flex-direction: row;  /* Ensure horizontal layout on smaller screens */
+                justify-content: center;
             }
         }
 
