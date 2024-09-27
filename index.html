@@ -62,7 +62,7 @@
             align-items: center; /* Align icon and text vertically */
             gap: 8px; /* Adjust space between icon and name */
             text-decoration: none;
-            color: white; /* Text color */
+            color: white; /* Set text color to white */
             font-family: 'Open Sans', sans-serif; /* Font for names */
         }
 
@@ -70,19 +70,12 @@
         .social-icons svg {
             width: 30px; /* Adjust icon size */
             height: auto;
-            filter: grayscale(100%); /* Grayscale effect */
-            transition: filter 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
-        }
-
-        .social-icons img:hover,
-        .social-icons svg:hover {
-            filter: grayscale(0%); /* Remove grayscale on hover */
-            transform: scale(1.1); /* Slight enlarge on hover */
+            /* Remove filter to keep icons white */
         }
 
         .social-icons span {
             font-size: 16px; /* Text size for names */
-        }             
+        }
 
         /* Profile Section */
         section.profile {
@@ -225,7 +218,7 @@
                     <img src="assets/icons/credly.svg" alt="Credly">
                     <span>Credly</span>
                 </a>
-            </div>            
+            </div>                       
         </div>
     </header>
 
