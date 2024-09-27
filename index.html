@@ -57,13 +57,16 @@
             margin-top: 20px;
         }
 
-        .social-icons img {
+        .social-icons img,
+        .social-icons svg {
             width: 50px;
-           filter: grayscale(100%) brightness(0) invert(1);
-            background-color: red; /* Temporary background to check if image is missing */
+            height: auto;
+            filter: grayscale(100%) brightness(0) invert(1); /* Ensures uniform grayscale */
+            transition: filter 0.3s ease;
         }
 
-        .social-icons img:hover {
+        .social-icons img:hover,
+        .social-icons svg:hover {
             filter: none; /* Remove grayscale on hover */
         }
 
@@ -197,13 +200,13 @@
         <div class="personal-info">
             <div class="social-icons">
                 <a href="https://github.com/rsergio07" target="_blank">
-                    <img src="assets/icons/github.png" alt="GitHub">
+                    <img src="assets/icons/github.svg" alt="GitHub">
                 </a>
                 <a href="https://www.linkedin.com/in/romero-sergio/" target="_blank">
-                    <img src="assets/icons/linkedin.png" alt="LinkedIn">
+                    <img src="assets/icons/linkedin.svg" alt="LinkedIn">
                 </a>
                 <a href="https://www.credly.com/users/rsergio" target="_blank">
-                    <img src="assets/icons/credly.png" alt="Credly">
+                    <img src="assets/icons/credly.svg" alt="Credly">
                 </a>
             </div>
         </div>
