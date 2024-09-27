@@ -53,22 +53,36 @@
         .social-icons {
             display: flex;
             justify-content: center;
-            gap: 40px;
+            gap: 40px; /* Adjust space between icon + name pairs */
             margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center; /* Align icon and text vertically */
+            gap: 8px; /* Adjust space between icon and name */
+            text-decoration: none;
+            color: white; /* Text color */
+            font-family: 'Open Sans', sans-serif; /* Font for names */
         }
 
         .social-icons img,
         .social-icons svg {
-            width: 50px;
+            width: 30px; /* Adjust icon size */
             height: auto;
-            filter: grayscale(100%) brightness(0) invert(1); /* Ensures uniform grayscale */
-            transition: filter 0.3s ease;
+            filter: grayscale(100%); /* Grayscale effect */
+            transition: filter 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
         }
 
         .social-icons img:hover,
         .social-icons svg:hover {
-            filter: none; /* Remove grayscale on hover */
+            filter: grayscale(0%); /* Remove grayscale on hover */
+            transform: scale(1.1); /* Slight enlarge on hover */
         }
+
+        .social-icons span {
+            font-size: 16px; /* Text size for names */
+        }             
 
         /* Profile Section */
         section.profile {
@@ -201,14 +215,17 @@
             <div class="social-icons">
                 <a href="https://github.com/rsergio07" target="_blank">
                     <img src="assets/icons/github.svg" alt="GitHub">
+                    <span>GitHub</span>
                 </a>
                 <a href="https://www.linkedin.com/in/romero-sergio/" target="_blank">
                     <img src="assets/icons/linkedin.svg" alt="LinkedIn">
+                    <span>LinkedIn</span>
                 </a>
                 <a href="https://www.credly.com/users/rsergio" target="_blank">
                     <img src="assets/icons/credly.svg" alt="Credly">
+                    <span>Credly</span>
                 </a>
-            </div>
+            </div>            
         </div>
     </header>
 
