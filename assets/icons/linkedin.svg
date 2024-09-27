@@ -1,3 +1,6 @@
-<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.42857 8.96884H13.1429..." fill="white"></path>
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg style="color: rgb(29, 53, 87);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+<path d="M416 32H31.9...z" fill="rgb(29, 53, 87)"></path>
 </svg>
