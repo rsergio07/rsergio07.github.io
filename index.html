@@ -6,7 +6,7 @@
     <title>Sergio Romero Sanchez - Professional Portfolio</title>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Roboto:wght@400;700&display=swap&display=swap" rel="stylesheet">
 
     <!-- Custom Styles -->
     <style>
@@ -41,7 +41,7 @@
 
         header p {
            font-size: 22px;
-            font-weight: 300;
+           font-weight: 300;
         }
 
         .personal-info {
@@ -52,27 +52,34 @@
         /* Social Media Icons Styling */
         .social-icons {
             display: flex;
-            justify-content: center;  /* Centers the icons and text */
-            gap: 40px;                /* Space between each icon + text pair */
+            justify-content: center;
+            gap: 40px;
             margin-top: 20px;
         }
 
         .social-icons a {
             display: flex;
-            align-items: center;       /* Vertically align icon and text */
-            gap: 8px;                  /* Space between icon and text */
-            text-decoration: none;     /* Remove underline from links */
-            color: white;              /* Set text color to white */
-            font-family: 'Open Sans', sans-serif;  /* Font for text */
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: white;
+            font-family: 'Open Sans', sans-serif;
         }
 
         .social-icons img {
-            width: 48px;               /* Set icon size */
+            width: 48px;
             height: auto;
         }
 
         .social-icons span {
-            font-size: 16px;            /* Size for the text next to icons */
+            font-size: 16px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .social-icons {
+                flex-direction: column;
+                align-items: center;
+            }
         }
 
         /* Profile Section */
@@ -130,7 +137,7 @@
         }
 
         section.skills strong {
-            color: #2980B9; /* Consistent color for strong text */
+            color: #2980B9;
         }
 
         /* Repository Section */
@@ -205,18 +212,18 @@
         <div class="personal-info">
             <div class="social-icons">
                 <a href="https://github.com/rsergio07" target="_blank">
-                    <img src="assets/icons/github.svg" alt="GitHub">
+                    <img src="assets/icons/icons8-github.svg" alt="GitHub">
                     <span>GitHub</span>
                 </a>
                 <a href="https://www.linkedin.com/in/romero-sergio/" target="_blank">
-                    <img src="assets/icons/linkedin.svg" alt="LinkedIn">
+                    <img src="assets/icons/icons8-linkedin.svg" alt="LinkedIn">
                     <span>LinkedIn</span>
                 </a>
                 <a href="https://www.credly.com/users/rsergio" target="_blank">
-                    <img src="assets/icons/credly.svg" alt="Credly">
+                    <img src="assets/icons/icons8-credly.svg" alt="Credly">
                     <span>Credly</span>
                 </a>
-            </div>            
+            </div>                   
         </div>
     </header>
 
@@ -224,9 +231,11 @@
     <section class="profile">
         <h2>About Me</h2>
         <p>
-            I am a Solutions Architect and Senior Site Reliability Engineer with over 18 years of experience in the IT industry. Since beginning my career in 2006, I have advanced through various roles, gaining deep expertise across multiple IT domains. My journey has been marked by consistent promotions, showcasing my commitment to learning and growth.        </p>
+            I am a Solutions Architect and Senior Site Reliability Engineer with over 18 years of experience in the IT industry. Since beginning my career in 2006, I have advanced through various roles, gaining deep expertise across multiple IT domains. My journey has been marked by consistent promotions, showcasing my commitment to learning and growth.
+        </p>
         <p>
-            Throughout my career, I have designed and implemented cloud automation, migration solutions, and transformations of IT infrastructure, cloud environments, and enterprise systems, helping businesses achieve scalable, secure, and high-performing solutions. My focus is on delivering cloud architectures that are scalable, secure, and highly available to meet business needs. I work with technologies such as Terraform, Visual Studio Code, Ansible, Kubernetes, Docker, GitHub, and Jenkins to automate and orchestrate cloud infrastructure.        </p>
+            Throughout my career, I have designed and implemented cloud automation, migration solutions, and transformations of IT infrastructure, cloud environments, and enterprise systems, helping businesses achieve scalable, secure, and high-performing solutions. My focus is on delivering cloud architectures that are scalable, secure, and highly available to meet business needs. I work with technologies such as Terraform, Visual Studio Code, Ansible, Kubernetes, Docker, GitHub, and Jenkins to automate and orchestrate cloud infrastructure.
+        </p>
         <p>
             I have a strong understanding of Agile methodologies and enjoy using my skills to drive organizational success. When not working, I enjoy sports, outdoor activities, watching movies, and spending time with my family.
         </p>
