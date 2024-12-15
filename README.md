@@ -1,4 +1,4 @@
-# Sergio Romero - Professional Portfolio
+# [Sergio Romero - Professional Portfolio](https://rsergio.com/)
 
 Welcome to the repository for my personal portfolio, showcasing my expertise in **Site Reliability Engineering (SRE)** and **Solutions Architecture**. This project contains the source code for my GitHub Pages site, where I present my professional background, skills, and dynamic list of public GitHub repositories.
 
