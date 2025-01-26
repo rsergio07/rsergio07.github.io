@@ -256,18 +256,20 @@
     <script>
         let repositories = [];
 
-        // Fetch repository data from GitHub API
-        fetch('https://api.github.com/users/rsergio07/repos')
-        .then(response => response.json())
-        .then(data => {
-            repositories = data;
-            displayRepos(repositories);
-        })
-        .catch(error => {
-            console.error('Error fetching repository data:', error);
-            const repoList = document.getElementById('repo-list');
-            repoList.innerHTML = `<p>Unable to fetch repositories at this time.</p>`;
-        });
+        // Fetch repositories tagged with the 'portfolio' topic
+        function fetchShowcaseRepos() {
+            fetch('https://api.github.com/search/repositories?q=user:rsergio07+topic:portfolio')
+                .then(response => response.json())
+                .then(data => {
+                    repositories = data.items;
+                    displayRepos(repositories);
+                })
+                .catch(error => {
+                    console.error('Error fetching repository data:', error);
+                    const repoList = document.getElementById('repo-list');
+                    repoList.innerHTML = `<p>Unable to fetch repositories at this time.</p>`;
+                });
+        }
 
         function displayRepos(repos) {
             const repoList = document.getElementById('repo-list');
@@ -284,6 +286,9 @@
                 repoList.appendChild(repoCard);
             });
         }
+
+        // Fetch and display the showcase repositories
+        fetchShowcaseRepos();
     </script>
 
 </body>
