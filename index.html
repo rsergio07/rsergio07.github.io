@@ -6,7 +6,7 @@
     <title>Sergio Romero Sanchez - Professional Portfolio</title>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Roboto:wght@400;700&display=swap&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Custom Styles -->
     <style>
@@ -16,7 +16,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Open Sans', sans-serif;
             background-color: #1D3557;
@@ -24,7 +24,7 @@
             padding: 0;
             color: white;
         }
-        
+
         /* Header Styling */
         header {
             color: white;
@@ -42,47 +42,6 @@
         header p {
            font-size: 22px;
            font-weight: 300;
-        }
-
-        .personal-info {
-            margin-top: 15px;
-            font-size: 16px;
-        }
-
-        /* Social Media Icons Styling */
-        .social-icons {
-            display: flex;
-            justify-content: center; /* Centers the icons horizontally */
-            gap: 40px;               /* Space between each icon */
-            margin-top: 20px;
-            flex-wrap: nowrap;       /* Prevents wrapping on smaller screens */
-        }
-
-        .social-icons a {
-            display: flex;
-            align-items: center;     /* Vertically align icon and text */
-            gap: 8px;                /* Space between icon and text */
-            text-decoration: none;   /* Remove underline from links */
-            color: white;            /* Set text color to white */
-            font-family: 'Open Sans', sans-serif; /* Font for text */
-        }
-
-        .social-icons img {
-            filter: invert(1);       /* Makes the icons white */
-            width: 48px;  /* Ensuring consistent size */
-            height: auto;
-        }
-
-        .social-icons span {
-            font-size: 16px;
-        }
-
-        /* Responsive adjustments */
-        @media screen and (max-width: 768px) {
-            .social-icons {
-                flex-direction: row;  /* Ensure horizontal layout on smaller screens */
-                justify-content: center;
-            }
         }
 
         /* Profile Section */
@@ -109,40 +68,6 @@
             text-align: center;
         }
 
-        /* Top Skills Section */
-        section.skills {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: white;
-            color: #333;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-
-        section.skills h2 {
-            font-size: 28px;
-            margin-bottom: 15px;
-            text-align: center;
-            color: #333;
-        }
-
-        section.skills ul {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-
-        section.skills li {
-            margin-bottom: 15px;
-        }
-
-        section.skills strong {
-            color: #2980B9;
-        }
-
         /* Repository Section */
         section.repo-list {
             max-width: 1200px;
@@ -156,14 +81,14 @@
             font-size: 28px;
             font-family: 'Roboto', sans-serif;
         }
-        
+
         .repo-list {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
         }
-        
+
         /* Repository Card */
         .repo-card {
             background-color: white;
@@ -173,28 +98,28 @@
             width: 300px;
             transition: transform 0.3s ease;
         }
-        
+
         .repo-card:hover {
             transform: translateY(-5px);
         }
-        
+
         .repo-card h3 {
             font-size: 20px;
             margin-bottom: 10px;
             font-family: 'Roboto', sans-serif;
         }
-        
+
         .repo-card p {
             font-size: 14px;
             margin-bottom: 10px;
             color: #666;
         }
-        
+
         a {
             text-decoration: none;
             color: #2980B9;
         }
-        
+
         a:hover {
             text-decoration: underline;
         }
@@ -205,6 +130,53 @@
                 margin-bottom: 20px;
             }
         }
+
+        /* Contact Me Section */
+        footer {
+            background-color: #1D3557;
+            padding: 40px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .contact {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .contact .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: nowrap;
+        }
+
+        .contact .social-icons a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: white;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .contact .social-icons img {
+            filter: invert(1); /* Makes the icons white */
+            width: 48px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .contact .social-icons a:hover img {
+            transform: scale(1.1); /* Hover effect */
+        }
+
     </style>
 </head>
 <body>
@@ -212,22 +184,6 @@
     <header>
         <h1>Sergio Romero Sanchez</h1>
         <p>Senior Site Reliability Engineer</p>
-        <div class="personal-info">
-            <div class="social-icons">
-                <a href="https://github.com/rsergio07" target="_blank">
-                    <img src="assets/icons/icons8-github.svg" alt="GitHub">
-                    <!-- <span>GitHub</span> -->
-                </a>
-                <a href="https://www.linkedin.com/in/romero-sergio/" target="_blank">
-                    <img src="assets/icons/icons8-linkedin.svg" alt="LinkedIn">
-                    <!-- <span>LinkedIn</span> -->
-                </a>
-                <a href="https://www.credly.com/users/rsergio" target="_blank">
-                    <img src="assets/icons/icons8-credly.svg" alt="Credly">
-                    <!-- <span>Credly</span> -->
-                </a>
-            </div>                   
-        </div>
     </header>
 
     <!-- Personal Profile Section -->
@@ -251,6 +207,24 @@
             <!-- Repositories will be dynamically injected here -->
         </div>
     </section>
+
+    <!-- Contact Me Section -->
+    <footer>
+        <section class="contact">
+            <h2>Contact Me</h2>
+            <div class="social-icons">
+                <a href="https://github.com/rsergio07" target="_blank" aria-label="GitHub Profile">
+                    <img src="assets/icons/icons8-github.svg" alt="GitHub">
+                </a>
+                <a href="https://www.linkedin.com/in/romero-sergio/" target="_blank" aria-label="LinkedIn Profile">
+                    <img src="assets/icons/icons8-linkedin.svg" alt="LinkedIn">
+                </a>
+                <a href="https://www.credly.com/users/rsergio" target="_blank" aria-label="Credly Profile">
+                    <img src="assets/icons/icons8-credly.svg" alt="Credly">
+                </a>
+            </div>
+        </section>
+    </footer>
 
     <!-- GitHub API Script -->
     <script>
