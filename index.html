@@ -16,7 +16,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
             font-family: 'Open Sans', sans-serif;
             background-color: #1D3557;
@@ -24,7 +24,7 @@
             padding: 0;
             color: white;
         }
-
+        
         /* Header Styling */
         header {
             color: white;
@@ -81,14 +81,14 @@
             font-size: 28px;
             font-family: 'Roboto', sans-serif;
         }
-
+        
         .repo-list {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
         }
-
+        
         /* Repository Card */
         .repo-card {
             background-color: white;
@@ -98,28 +98,28 @@
             width: 300px;
             transition: transform 0.3s ease;
         }
-
+        
         .repo-card:hover {
             transform: translateY(-5px);
         }
-
+        
         .repo-card h3 {
             font-size: 20px;
             margin-bottom: 10px;
             font-family: 'Roboto', sans-serif;
         }
-
+        
         .repo-card p {
             font-size: 14px;
             margin-bottom: 10px;
             color: #666;
         }
-
+        
         a {
             text-decoration: none;
             color: #2980B9;
         }
-
+        
         a:hover {
             text-decoration: underline;
         }
@@ -153,28 +153,34 @@
         .contact .social-icons {
             display: flex;
             justify-content: center;
-            gap: 40px;
-            flex-wrap: nowrap;
+            align-items: center; /* Align icons vertically */
+            gap: 30px; /* Adjust spacing between icons */
+            flex-wrap: nowrap; /* Keep icons in one row */
         }
 
         .contact .social-icons a {
             display: flex;
+            justify-content: center;
             align-items: center;
-            gap: 8px;
+            width: 60px; /* Uniform container size for icons */
+            height: 60px; /* Uniform container size for icons */
+            border-radius: 8px; /* Optional rounded corners for containers */
+            background-color: transparent; /* Optional background for hover effect */
             text-decoration: none;
-            color: white;
-            font-family: 'Open Sans', sans-serif;
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
 
         .contact .social-icons img {
-            filter: invert(1); /* Makes the icons white */
-            width: 48px;
-            height: auto;
-            transition: transform 0.3s ease;
+            width: 36px; /* Set a consistent size for SVG icons */
+            height: 36px;
+            object-fit: contain; /* Ensure aspect ratio is preserved */
+            filter: invert(1); /* Keep icons white */
+            display: block; /* Ensure consistent rendering */
         }
 
-        .contact .social-icons a:hover img {
-            transform: scale(1.1); /* Hover effect */
+        .contact .social-icons a:hover {
+            transform: scale(1.1); /* Slightly enlarge icons on hover */
+            background-color: rgba(255, 255, 255, 0.1); /* Subtle hover background */
         }
 
     </style>
@@ -183,20 +189,20 @@
 
     <header>
         <h1>Sergio Romero Sanchez</h1>
-        <p>Senior Site Reliability Engineer</p>
+        <p>Senior Site Reliability Engineer | Solutions Architect</p>
     </header>
 
     <!-- Personal Profile Section -->
     <section class="profile">
         <h2>About Me</h2>
         <p>
-            I am a Solutions Architect and Senior Site Reliability Engineer with over 18 years of experience in the IT industry. Since beginning my career in 2006, I have advanced through various roles, gaining deep expertise across multiple IT domains. My journey has been marked by consistent promotions, showcasing my commitment to learning and growth.
+            I am a Senior Site Reliability Engineer (SRE) and Solutions Architect with 18+ years of experience designing and implementing scalable, secure, and high-performing cloud infrastructures. My expertise spans cloud automation, migration strategies, and enterprise IT transformations, helping businesses optimize their reliability, security, and performance.
         </p>
         <p>
-            Throughout my career, I have designed and implemented cloud automation, migration solutions, and transformations of IT infrastructure, cloud environments, and enterprise systems, helping businesses achieve scalable, secure, and high-performing solutions. My focus is on delivering cloud architectures that are scalable, secure, and highly available to meet business needs. I work with technologies such as Terraform, Visual Studio Code, Ansible, Kubernetes, Docker, GitHub, and Jenkins to automate and orchestrate cloud infrastructure.
+            I specialize in Kubernetes, Terraform, Ansible, Docker, and CI/CD pipelines to automate and orchestrate infrastructure. As a mentor and technical leader, I have built SRE onboarding programs and developed structured training academies to empower engineers in adopting modern cloud and automation practices.
         </p>
         <p>
-            I have a strong understanding of Agile methodologies and enjoy using my skills to drive organizational success. When not working, I enjoy sports, outdoor activities, watching movies, and spending time with my family.
+            With a strong Agile mindset, I thrive in high-impact roles that bridge engineering excellence and business strategy. Outside of work, I enjoy sports, outdoor activities, movies, and spending time with my family.
         </p>
     </section>
 
@@ -221,6 +227,9 @@
                 </a>
                 <a href="https://www.credly.com/users/rsergio" target="_blank" aria-label="Credly Profile">
                     <img src="assets/icons/icons8-credly.svg" alt="Credly">
+                </a>
+                <a href="assets/resume.pdf" target="_blank" aria-label="Download Resume">
+                    <img src="assets/icons/icons8-resume.svg" alt="Resume">
                 </a>
             </div>
         </section>
