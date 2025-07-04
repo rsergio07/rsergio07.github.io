@@ -1,0 +1,256 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #1D3557;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+/* Header Styling */
+header {
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+
+header h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 22px;
+    font-weight: 300;
+}
+
+/* Profile Section */
+section.profile {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    color: #333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+section.profile h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+section.profile p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Repository Section */
+section.repo-list {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.repo-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Repository Card */
+.repo-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.repo-card:hover {
+    transform: translateY(-5px);
+}
+
+.repo-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.repo-card p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: #2980B9;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Loading States */
+.loading {
+    text-align: center;
+    padding: 20px;
+    color: white;
+    font-size: 18px;
+}
+
+.loading::after {
+    content: '...';
+    animation: dots 1.5s infinite;
+}
+
+@keyframes dots {
+    0%, 20% { content: '.'; }
+    40%, 60% { content: '..'; }
+    80%, 100% { content: '...'; }
+}
+
+/* Error States */
+.error-message {
+    color: #ff6b6b;
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 107, 107, 0.1);
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+/* Contact Me Section */
+footer {
+    background-color: #1D3557;
+    padding: 40px 0;
+    text-align: center;
+    color: white;
+}
+
+.contact {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.contact .social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: nowrap;
+}
+
+.contact .social-icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    background-color: transparent;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.contact .social-icons img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    filter: invert(1);
+    display: block;
+}
+
+.contact .social-icons a:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Load More Button */
+.load-more {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #2980B9;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.load-more:hover {
+    background-color: #2471A3;
+}
+
+.load-more:disabled {
+    background-color: #95A5A6;
+    cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .repo-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    header h1 {
+        font-size: 36px;
+    }
+    
+    header p {
+        font-size: 18px;
+    }
+}
+
+/* Accessibility Focus Styles */
+a:focus,
+button:focus {
+    outline: 3px solid #2980B9;
+    outline-offset: 2px;
+}
+
+/* Skip to Main Content */
+.skip-to-main {
+    position: absolute;
+    left: -9999px;
+    z-index: 999;
+    padding: 1em;
+    background-color: white;
+    color: #1D3557;
+    text-decoration: none;
+}
+
+.skip-to-main:focus {
+    left: 50%;
+    transform: translateX(-50%);
+}

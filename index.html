@@ -3,276 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional portfolio of Sergio Romero Sanchez, Senior Site Reliability Engineer and Solutions Architect specializing in cloud infrastructure, Kubernetes, and DevOps practices.">
+    <meta name="keywords" content="Site Reliability Engineer, Solutions Architect, Kubernetes, Terraform, Cloud Infrastructure, DevOps">
+    <meta name="author" content="Sergio Romero Sanchez">
+    <meta name="theme-color" content="#1D3557">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Sergio Romero Sanchez - Professional Portfolio">
+    <meta property="og:description" content="Senior Site Reliability Engineer and Solutions Architect specializing in cloud infrastructure and DevOps practices.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rsergio07.github.io">
+    
     <title>Sergio Romero Sanchez - Professional Portfolio</title>
 
-    <!-- Google Fonts -->
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://api.github.com">
+    
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- Custom Styles -->
-    <style>
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: #1D3557;
-            margin: 0;
-            padding: 0;
-            color: white;
-        }
-        
-        /* Header Styling */
-        header {
-            color: white;
-            padding: 30px 0;
-            text-align: center;
-            font-family: 'Open Sans', sans-serif;
-        }
-
-        header h1 {
-            font-family: 'Roboto', sans-serif;
-            font-size: 48px;
-            margin-bottom: 10px;
-        }
-
-        header p {
-           font-size: 22px;
-           font-weight: 300;
-        }
-
-        /* Profile Section */
-        section.profile {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: white;
-            color: #333;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-
-        section.profile h2 {
-            font-size: 28px;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        section.profile p {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        /* Repository Section */
-        section.repo-list {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 20px;
-        }
-
-        h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 28px;
-            font-family: 'Roboto', sans-serif;
-        }
-        
-        .repo-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-        
-        /* Repository Card */
-        .repo-card {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            width: 300px;
-            transition: transform 0.3s ease;
-        }
-        
-        .repo-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .repo-card h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
-            font-family: 'Roboto', sans-serif;
-        }
-        
-        .repo-card p {
-            font-size: 14px;
-            margin-bottom: 10px;
-            color: #666;
-        }
-        
-        a {
-            text-decoration: none;
-            color: #2980B9;
-        }
-        
-        a:hover {
-            text-decoration: underline;
-        }
-
-        @media screen and (max-width: 768px) {
-            .repo-card {
-                width: 100%;
-                margin-bottom: 20px;
-            }
-        }
-
-        /* Contact Me Section */
-        footer {
-            background-color: #1D3557;
-            padding: 40px 0;
-            text-align: center;
-            color: white;
-        }
-
-        .contact {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .contact h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        .contact .social-icons {
-            display: flex;
-            justify-content: center;
-            align-items: center; /* Align icons vertically */
-            gap: 30px; /* Adjust spacing between icons */
-            flex-wrap: nowrap; /* Keep icons in one row */
-        }
-
-        .contact .social-icons a {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 60px; /* Uniform container size for icons */
-            height: 60px; /* Uniform container size for icons */
-            border-radius: 8px; /* Optional rounded corners for containers */
-            background-color: transparent; /* Optional background for hover effect */
-            text-decoration: none;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-
-        .contact .social-icons img {
-            width: 36px; /* Set a consistent size for SVG icons */
-            height: 36px;
-            object-fit: contain; /* Ensure aspect ratio is preserved */
-            filter: invert(1); /* Keep icons white */
-            display: block; /* Ensure consistent rendering */
-        }
-
-        .contact .social-icons a:hover {
-            transform: scale(1.1); /* Slightly enlarge icons on hover */
-            background-color: rgba(255, 255, 255, 0.1); /* Subtle hover background */
-        }
-
-    </style>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 </head>
 <body>
+    <!-- Skip to Main Content Link -->
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
 
-    <header>
+    <header role="banner">
         <h1>Sergio Romero Sanchez</h1>
         <p>Senior Site Reliability Engineer | Solutions Architect</p>
     </header>
 
-    <!-- Personal Profile Section -->
-    <section class="profile">
-        <h2>About Me</h2>
-        <p>
-            I am a Senior Site Reliability Engineer (SRE) and Solutions Architect with 18+ years of experience designing and implementing scalable, secure, and high-performing cloud infrastructures. My expertise spans cloud automation, migration strategies, and enterprise IT transformations, helping businesses optimize their reliability, security, and performance.
-        </p>
-        <p>
-            I specialize in Kubernetes, Terraform, Ansible, Docker, and CI/CD pipelines to automate and orchestrate infrastructure. As a mentor and technical leader, I have built SRE onboarding programs and developed structured training academies to empower engineers in adopting modern cloud and automation practices.
-        </p>
-        <p>
-            With a strong Agile mindset, I thrive in high-impact roles that bridge engineering excellence and business strategy. Outside of work, I enjoy sports, outdoor activities, movies, and spending time with my family.
-        </p>
-    </section>
+    <main id="main-content" role="main">
+        <!-- Personal Profile Section -->
+        <section class="profile" aria-labelledby="about-heading">
+            <h2 id="about-heading">About Me</h2>
+            <p>
+                I am a Senior Site Reliability Engineer (SRE) and Solutions Architect with 18+ years of experience designing and implementing scalable, secure, and high-performing cloud infrastructure.
+            </p>
+            <p>
+                I specialize in Kubernetes, Terraform, Ansible, Docker, and CI/CD pipelines to automate and orchestrate infrastructure. As a mentor and technical leader, I have built SRE onboarding programs and established best practices.
+            </p>
+            <p>
+                With a strong Agile mindset, I thrive in high-impact roles that bridge engineering excellence and business strategy. Outside of work, I enjoy sports, outdoor activities, movies, and staying current with technology trends.
+            </p>
+        </section>
 
-    <!-- Repositories Section -->
-    <section class="repo-list">
-        <h2>GitHub Repositories</h2>
-        <div class="repo-list" id="repo-list">
-            <!-- Repositories will be dynamically injected here -->
-        </div>
-    </section>
+        <!-- Repositories Section -->
+        <section class="repo-list" aria-labelledby="repos-heading">
+            <h2 id="repos-heading">GitHub Repositories</h2>
+            <div class="repo-list" id="repo-list">
+                <!-- Repositories will be dynamically injected here -->
+            </div>
+            <button id="load-more" class="load-more">Load More</button>
+        </section>
+    </main>
 
     <!-- Contact Me Section -->
-    <footer>
-        <section class="contact">
-            <h2>Contact Me</h2>
+    <footer role="contentinfo">
+        <section class="contact" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contact Me</h2>
             <div class="social-icons">
-                <a href="https://github.com/rsergio07" target="_blank" aria-label="GitHub Profile">
+                <a href="https://github.com/rsergio07" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="Visit my GitHub Profile">
                     <img src="assets/icons/icons8-github.svg" alt="GitHub">
                 </a>
-                <a href="https://www.linkedin.com/in/romero-sergio/" target="_blank" aria-label="LinkedIn Profile">
+                <a href="https://www.linkedin.com/in/romero-sergio/" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="Connect with me on LinkedIn">
                     <img src="assets/icons/icons8-linkedin.svg" alt="LinkedIn">
                 </a>
-                <a href="https://www.credly.com/users/rsergio" target="_blank" aria-label="Credly Profile">
+                <a href="https://www.credly.com/users/rsergio" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="View my certifications on Credly">
                     <img src="assets/icons/icons8-credly.svg" alt="Credly">
                 </a>
-                <a href="assets/resume.pdf" target="_blank" aria-label="Download Resume">
+                <a href="assets/resume.pdf" 
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Download my resume">
                     <img src="assets/icons/icons8-resume.svg" alt="Resume">
                 </a>
             </div>
         </section>
     </footer>
 
-    <!-- GitHub API Script -->
-    <script>
-        let repositories = [];
+    <!-- NoScript Fallback -->
+    <noscript>
+        <div class="error-message">
+            <p>This website requires JavaScript to function properly.</p>
+            <p>Please enable JavaScript in your browser settings.</p>
+        </div>
+    </noscript>
 
-        // Fetch repositories tagged with the 'portfolio' topic
-        function fetchShowcaseRepos() {
-            fetch('https://api.github.com/search/repositories?q=user:rsergio07+topic:portfolio')
-                .then(response => response.json())
-                .then(data => {
-                    repositories = data.items;
-                    displayRepos(repositories);
-                })
-                .catch(error => {
-                    console.error('Error fetching repository data:', error);
-                    const repoList = document.getElementById('repo-list');
-                    repoList.innerHTML = `<p>Unable to fetch repositories at this time.</p>`;
-                });
-        }
-
-        function displayRepos(repos) {
-            const repoList = document.getElementById('repo-list');
-            repoList.innerHTML = '';
-            repos.forEach(repo => {
-                const repoCard = document.createElement('div');
-                repoCard.classList.add('repo-card');
-
-                repoCard.innerHTML = `
-                    <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
-                    <p>${repo.description ? repo.description : "No description provided."}</p>
-                `;
-                
-                repoList.appendChild(repoCard);
-            });
-        }
-
-        // Fetch and display the showcase repositories
-        fetchShowcaseRepos();
-    </script>
-
+    <!-- Main Script -->
+    <script src="js/main.js" defer></script>
 </body>
 </html>
