@@ -6,7 +6,7 @@ This site reflects not just my skills in automation, infrastructure, and reliabi
 
 ---
 
-## 🔍 What You'll Find
+## What You'll Find
 
 - **About Me**: A clear, personal introduction to who I am, what I do, and how I work.
 - **Skills Overview**: A concise summary of my expertise in Kubernetes, Terraform, CI/CD, observability, and cloud automation.
@@ -15,7 +15,7 @@ This site reflects not just my skills in automation, infrastructure, and reliabi
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - **HTML5 & Tailwind CSS** – Custom-built static layout for speed and clarity.
 - **Vanilla JavaScript** – Dynamic GitHub API integration for real-time project updates.
