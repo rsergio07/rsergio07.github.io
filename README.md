@@ -1,32 +1,31 @@
-# [Sergio Romero - Professional Portfolio](https://rsergio.com/)
+# [Sergio Romero – Professional Portfolio](https://rsergio.com/)
 
-Welcome to the repository for my personal portfolio, showcasing my expertise in **Site Reliability Engineering (SRE)** and **Solutions Architecture**. This project contains the source code for my GitHub Pages site, where I present my professional background, skills, and dynamic list of public GitHub repositories.
+Welcome to the repository behind my personal portfolio — a space where I share my journey, projects, and principles as a **Senior Site Reliability Engineer (SRE)** and **Cloud Solutions Architect**.
 
-## Features
-
-- **Social Media Integration**: Links to my GitHub, LinkedIn, and Credly profiles, offering access to my projects, professional network, and certifications.
-- **Skills Showcase**: A detailed section listing my core competencies in cloud infrastructure, automation, and DevOps, including tools like Terraform, Kubernetes, and Docker.
-- **Dynamic GitHub Repositories**: Real-time display of my public repositories using the GitHub API, allowing visitors to explore my open-source work.
-  
-## Technologies Used
-
-- **HTML5 & CSS3**: For the structure and styling of the portfolio.
-- **JavaScript**: Used to fetch and display repositories dynamically using the GitHub API.
-- **GitHub Pages**: Hosting this project for easy access and updates.
-- **GitHub API**: Fetches real-time data on my public repositories.
-
-## How It Works
-
-The portfolio is a static website hosted on [GitHub Pages](https://rsergio07.github.io). It includes an About Me section, a list of top skills, and a dynamically updated GitHub repository list. Data for repositories is fetched using the GitHub API and presented in a visually appealing card-based format.
-
-### How to Run Locally
-
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/rsergio07/rsergio07.github.io.git
-    ```
-2. Open the `index.html` file in your browser to view the portfolio.
+This site reflects not just my skills in automation, infrastructure, and reliability, but also my commitment to mentoring, building resilient systems, and contributing to the tech community.
 
 ---
 
-Thanks for visiting my portfolio!
+## 🔍 What You'll Find
+
+- **About Me**: A clear, personal introduction to who I am, what I do, and how I work.
+- **Skills Overview**: A concise summary of my expertise in Kubernetes, Terraform, CI/CD, observability, and cloud automation.
+- **Live Project Portfolio**: A dynamic grid of my open-source projects, fetched using the GitHub API and filtered by `portfolio` topic.
+- **Social Links**: Direct access to my GitHub, LinkedIn, and Credly certifications.
+
+---
+
+## 🛠️ Technologies Used
+
+- **HTML5 & Tailwind CSS** – Custom-built static layout for speed and clarity.
+- **Vanilla JavaScript** – Dynamic GitHub API integration for real-time project updates.
+- **GitHub Pages** – Deployed directly from this repository.
+- **GitHub Search API** – Filters and paginates only repositories tagged with `portfolio`.
+
+---
+
+## Why I Built This
+
+This portfolio was designed to reflect more than just a résumé — it's a curated, living representation of my work and principles. It highlights automation, reliability, and mentorship as core values, and offers a transparent view into the projects I care about most.
+
+Thanks for visiting!
