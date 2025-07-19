@@ -10,13 +10,11 @@
 
     <!-- Custom Styles -->
     <style>
-        /* Basic Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
         body {
             font-family: 'Open Sans', sans-serif;
             background-color: #1D3557;
@@ -24,27 +22,100 @@
             padding: 0;
             color: white;
         }
-        
-        /* Header Styling */
         header {
             color: white;
             padding: 30px 0;
             text-align: center;
-            font-family: 'Open Sans', sans-serif;
         }
-
         header h1 {
             font-family: 'Roboto', sans-serif;
             font-size: 48px;
             margin-bottom: 10px;
         }
-
         header p {
            font-size: 22px;
            font-weight: 300;
         }
 
-        /* Profile Section */
+        /* Divider Style */
+        .divider {
+            width: 100%;
+            max-width: 900px;
+            height: 0;
+            border: none;
+            border-top: 2px solid #a3b6d9;
+            margin: 40px auto;
+        }
+
+        /* Contact Me Section - at top */
+        .contact-top {
+            max-width: 1200px;
+            margin: 0 auto 40px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        .contact-top h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-family: 'Roboto', sans-serif;
+        }
+        .contact-top .social-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: nowrap;
+        }
+        .contact-top .social-icons a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            background-color: transparent;
+            text-decoration: none;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            position: relative;
+        }
+        .contact-top .social-icons img {
+            width: 36px;
+            height: 36px;
+            object-fit: contain;
+            filter: invert(1);
+            display: block;
+        }
+        .contact-top .social-icons a:hover {
+            transform: scale(1.1);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Tooltip styles */
+        .contact-top .social-icons .tooltip {
+            visibility: hidden;
+            opacity: 0;
+            width: max-content;
+            background-color: #222f3e;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 6px 14px;
+            position: absolute;
+            z-index: 10;
+            bottom: 110%; /* Arriba del icono */
+            left: 50%;
+            transform: translateX(-50%);
+            transition: opacity 0.2s;
+            font-size: 14px;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+        .contact-top .social-icons a:hover .tooltip,
+        .contact-top .social-icons a:focus .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
         section.profile {
             max-width: 1200px;
             margin: 40px auto;
@@ -54,13 +125,11 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
         }
-
         section.profile h2 {
             font-size: 28px;
             margin-bottom: 15px;
             text-align: center;
         }
-
         section.profile p {
             font-size: 16px;
             line-height: 1.6;
@@ -68,28 +137,23 @@
             text-align: center;
         }
 
-        /* Repository Section */
         section.repo-list {
             max-width: 1200px;
             margin: 40px auto;
             padding: 20px;
         }
-
         h2 {
             text-align: center;
             margin-bottom: 30px;
             font-size: 28px;
             font-family: 'Roboto', sans-serif;
         }
-        
         .repo-list {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
         }
-        
-        /* Repository Card */
         .repo-card {
             background-color: white;
             border-radius: 8px;
@@ -98,91 +162,32 @@
             width: 300px;
             transition: transform 0.3s ease;
         }
-        
         .repo-card:hover {
             transform: translateY(-5px);
         }
-        
         .repo-card h3 {
             font-size: 20px;
             margin-bottom: 10px;
             font-family: 'Roboto', sans-serif;
         }
-        
         .repo-card p {
             font-size: 14px;
             margin-bottom: 10px;
             color: #666;
         }
-        
         a {
             text-decoration: none;
             color: #2980B9;
         }
-        
         a:hover {
             text-decoration: underline;
         }
-
         @media screen and (max-width: 768px) {
             .repo-card {
                 width: 100%;
                 margin-bottom: 20px;
             }
         }
-
-        /* Contact Me Section */
-        footer {
-            background-color: #1D3557;
-            padding: 40px 0;
-            text-align: center;
-            color: white;
-        }
-
-        .contact {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .contact h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        .contact .social-icons {
-            display: flex;
-            justify-content: center;
-            align-items: center; /* Align icons vertically */
-            gap: 30px; /* Adjust spacing between icons */
-            flex-wrap: nowrap; /* Keep icons in one row */
-        }
-
-        .contact .social-icons a {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 60px; /* Uniform container size for icons */
-            height: 60px; /* Uniform container size for icons */
-            border-radius: 8px; /* Optional rounded corners for containers */
-            background-color: transparent; /* Optional background for hover effect */
-            text-decoration: none;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-
-        .contact .social-icons img {
-            width: 36px; /* Set a consistent size for SVG icons */
-            height: 36px;
-            object-fit: contain; /* Ensure aspect ratio is preserved */
-            filter: invert(1); /* Keep icons white */
-            display: block; /* Ensure consistent rendering */
-        }
-
-        .contact .social-icons a:hover {
-            transform: scale(1.1); /* Slightly enlarge icons on hover */
-            background-color: rgba(255, 255, 255, 0.1); /* Subtle hover background */
-        }
-
     </style>
 </head>
 <body>
@@ -192,11 +197,40 @@
         <p>Senior Site Reliability Engineer | Solutions Architect</p>
     </header>
 
+    <!-- Divider -->
+    <div class="divider"></div>
+
+    <!-- Contact Me Section with custom tooltips -->
+    <section class="contact-top">
+        <h2>Contact Me</h2>
+        <div class="social-icons">
+            <a href="https://github.com/rsergio07" target="_blank" aria-label="GitHub Profile">
+                <img src="assets/icons/icons8-github.svg" alt="GitHub">
+                <span class="tooltip">GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/romero-sergio/" target="_blank" aria-label="LinkedIn Profile">
+                <img src="assets/icons/icons8-linkedin.svg" alt="LinkedIn">
+                <span class="tooltip">LinkedIn</span>
+            </a>
+            <a href="https://www.credly.com/users/rsergio" target="_blank" aria-label="Credly Profile">
+                <img src="assets/icons/icons8-credly.svg" alt="Credly">
+                <span class="tooltip">Credly</span>
+            </a>
+            <a href="https://medium.com/@sergiors07" target="_blank" aria-label="Medium Blog">
+                <img src="assets/icons/icons8-medium.svg" alt="Medium Blog">
+                <span class="tooltip">Medium</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="divider"></div>
+
     <!-- Personal Profile Section -->
     <section class="profile">
         <h2>About Me</h2>
         <p>
-            I am a Senior Site Reliability Engineer (SRE) and Solutions Architect with 18+ years of experience designing and implementing scalable, secure, and high-performing cloud infrastructures. My expertise spans cloud automation, migration strategies, and enterprise IT transformations, helping businesses optimize their reliability, security, and performance.
+            I am a Senior Site Reliability Engineer (SRE) and Solutions Architect with 20+ years of experience designing and implementing scalable, secure, and high-performing cloud infrastructures. My expertise spans cloud automation, migration strategies, and enterprise IT transformations, helping businesses optimize their reliability, security, and performance.
         </p>
         <p>
             I specialize in Kubernetes, Terraform, Ansible, Docker, and CI/CD pipelines to automate and orchestrate infrastructure. As a mentor and technical leader, I have built SRE onboarding programs and developed structured training academies to empower engineers in adopting modern cloud and automation practices.
@@ -206,6 +240,9 @@
         </p>
     </section>
 
+    <!-- Divider -->
+    <div class="divider"></div>
+
     <!-- Repositories Section -->
     <section class="repo-list">
         <h2>GitHub Repositories</h2>
@@ -214,26 +251,8 @@
         </div>
     </section>
 
-    <!-- Contact Me Section -->
-    <footer>
-        <section class="contact">
-            <h2>Contact Me</h2>
-            <div class="social-icons">
-                <a href="https://github.com/rsergio07" target="_blank" aria-label="GitHub Profile">
-                    <img src="assets/icons/icons8-github.svg" alt="GitHub">
-                </a>
-                <a href="https://www.linkedin.com/in/romero-sergio/" target="_blank" aria-label="LinkedIn Profile">
-                    <img src="assets/icons/icons8-linkedin.svg" alt="LinkedIn">
-                </a>
-                <a href="https://www.credly.com/users/rsergio" target="_blank" aria-label="Credly Profile">
-                    <img src="assets/icons/icons8-credly.svg" alt="Credly">
-                </a>
-                <a href="assets/resume.pdf" target="_blank" aria-label="Download Resume">
-                    <img src="assets/icons/icons8-resume.svg" alt="Resume">
-                </a>
-            </div>
-        </section>
-    </footer>
+    <!-- Divider -->
+    <div class="divider"></div>
 
     <!-- GitHub API Script -->
     <script>
