@@ -57,79 +57,6 @@ header p {
     margin: 40px auto;
 }
 
-/* Contact Me Section */
-.contact-top {
-    max-width: 1200px;
-    margin: 0 auto 40px auto;
-    padding: 0 20px;
-    text-align: center;
-}
-.contact-top h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
-}
-
-/* Social Icons */
-.social-icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-.social-icons a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60px;
-    height: 60px;
-    border-radius: 8px;
-    background-color: transparent;
-    text-decoration: none;
-    position: relative;
-    transition: transform 0.25s, background-color 0.25s;
-    outline: none;
-}
-.social-icons img {
-    width: 36px;
-    height: 36px;
-    object-fit: contain;
-    filter: invert(1);
-    display: block;
-}
-.social-icons a:focus, .social-icons a:hover {
-    transform: scale(1.1);
-    background-color: rgba(255,255,255,0.08);
-    outline: 2px solid #2980B9;
-}
-
-/* Tooltip Styles */
-.tooltip {
-    visibility: hidden;
-    opacity: 0;
-    width: max-content;
-    background-color: #222f3e;
-    color: #fff;
-    text-align: center;
-    border-radius: 5px;
-    padding: 6px 14px;
-    position: absolute;
-    z-index: 10;
-    bottom: 110%;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: opacity 0.2s, visibility 0.2s;
-    font-size: 0.95rem;
-    pointer-events: none;
-    white-space: nowrap;
-}
-.social-icons a:hover .tooltip,
-.social-icons a:focus .tooltip {
-    visibility: visible;
-    opacity: 1;
-}
-
 /* Main Content */
 main {
     display: block;
@@ -174,7 +101,7 @@ main {
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     color: #fff;
 }
-.repo-list .repo-list {
+.repo-list .repo-list { /* This targets the inner div with class repo-list */
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -226,6 +153,66 @@ footer {
     background: none;
 }
 
+.footer-content {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center horizontally */
+    gap: 15px; /* Space between the icon and text */
+}
+
+.footer-content a {
+    display: inline-block; /* Allows width/height and vertical alignment */
+    width: 36px; /* Size of the icon container */
+    height: 36px;
+    position: relative;
+    transition: transform 0.25s, background-color 0.25s;
+    outline: none;
+    border-radius: 5px; /* Slightly rounded corners for the hover background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-content a img {
+    width: 30px; /* Size of the actual icon image */
+    height: 30px;
+    filter: invert(1); /* Invert color for visibility on dark background */
+    display: block;
+}
+
+.footer-content a:focus,
+.footer-content a:hover {
+    transform: scale(1.1);
+    background-color: rgba(255,255,255,0.08); /* Subtle background on hover/focus */
+    outline: 2px solid #2980B9;
+}
+
+/* Tooltip Styles (retained for LinkedIn icon in footer) */
+.tooltip {
+    visibility: hidden;
+    opacity: 0;
+    width: max-content;
+    background-color: #222f3e;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 6px 14px;
+    position: absolute;
+    z-index: 10;
+    bottom: 110%; /* Position above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.2s, visibility 0.2s;
+    font-size: 0.95rem;
+    pointer-events: none;
+    white-space: nowrap;
+}
+.footer-content a:hover .tooltip,
+.footer-content a:focus .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
 /* Responsive Design */
 @media screen and (max-width: 900px) {
     .profile, .repo-card {
@@ -243,9 +230,6 @@ footer {
     .profile h2,
     .repo-list h2 {
         font-size: 1.2rem;
-    }
-    .social-icons {
-        gap: 18px;
     }
     .repo-card {
         width: 98vw;
