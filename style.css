@@ -6,9 +6,11 @@
 }
 body {
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-    background-color: #1D3557;
+    /* Subtle Gradient Background */
+    background: linear-gradient(to bottom, #1D3557, #13243B); /* Darker blue at the bottom */
     color: #fff;
     line-height: 1.6;
+    min-height: 100vh; /* Ensure gradient covers full viewport height */
 }
 
 /* Skip Link for Accessibility */
@@ -31,7 +33,7 @@ body {
 
 /* Header */
 header {
-    padding: 32px 0 10px 0;
+    padding: 40px 0 20px 0; /* Increased top and bottom padding */
     text-align: center;
     background: none;
 }
@@ -54,7 +56,7 @@ header p {
     max-width: 900px;
     border: none;
     border-top: 2px solid #a3b6d9;
-    margin: 40px auto;
+    margin: 60px auto; /* Increased vertical margin */
 }
 
 /* Main Content */
@@ -71,9 +73,9 @@ main {
     color: #222f3e;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.07);
-    padding: 32px 20px;
+    padding: 40px 30px; /* Increased padding inside the card */
     max-width: 1000px;
-    margin: 40px auto;
+    margin: 60px auto; /* Increased vertical margin around the card */
 }
 .profile h2 {
     font-size: 1.7rem;
@@ -84,19 +86,19 @@ main {
 }
 .profile p {
     font-size: 1.05rem;
-    margin-bottom: 18px;
+    margin-bottom: 20px; /* Slightly increased space between paragraphs */
     text-align: center;
 }
 
 /* Repo List Section */
 .repo-list {
     max-width: 1200px;
-    margin: 40px auto;
+    margin: 60px auto; /* Increased vertical margin */
     padding: 20px;
 }
 .repo-list h2 {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px; /* Increased space below the heading */
     font-size: 1.7rem;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     color: #fff;
@@ -104,7 +106,7 @@ main {
 .repo-list .repo-list { /* This targets the inner div with class repo-list */
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px; /* Increased space between repo cards */
     justify-content: center;
 }
 .repo-card {
@@ -112,9 +114,9 @@ main {
     color: #222f3e;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.09);
-    padding: 20px;
+    padding: 25px; /* Slightly increased padding inside the card */
     width: 300px;
-    margin-bottom: 10px;
+    margin-bottom: 15px; /* Slightly increased margin between stacked cards on smaller screens */
     transition: transform 0.3s;
 }
 .repo-card:hover,
@@ -149,7 +151,7 @@ footer {
     text-align: center;
     font-size: 1rem;
     color: #b5c6e0;
-    padding: 28px 0 16px 0;
+    padding: 40px 0 20px 0; /* Increased top and bottom padding */
     background: none;
 }
 
@@ -157,7 +159,7 @@ footer {
     display: flex;
     flex-direction: column; /* Stack items vertically */
     align-items: center; /* Center horizontally */
-    gap: 15px; /* Space between the icon and text */
+    gap: 20px; /* Increased space between the icon and text */
 }
 
 .footer-content a {
@@ -187,7 +189,7 @@ footer {
     outline: 2px solid #2980B9;
 }
 
-/* Tooltip Styles (retained for LinkedIn icon in footer) */
+/* Tooltip Styles */
 .tooltip {
     visibility: hidden;
     opacity: 0;
@@ -215,12 +217,13 @@ footer {
 
 /* Responsive Design */
 @media screen and (max-width: 900px) {
-    .profile, .repo-card {
+    .profile {
         max-width: 98vw;
-        padding: 16px 8px;
+        padding: 30px 20px; /* Adjusted padding for smaller screens */
     }
     .repo-card {
         width: 90vw;
+        padding: 20px; /* Adjusted padding for smaller screens */
     }
 }
 @media screen and (max-width: 600px) {
@@ -233,7 +236,284 @@ footer {
     }
     .repo-card {
         width: 98vw;
-        padding: 12px 4px;
+        padding: 15px 10px; /* Further adjusted padding for very small screens */
+    }
+    /* Adjustments for overall spacing on small screens */
+    .divider,
+    .profile,
+    .repo-list {
+        margin: 40px auto; /* Reduce vertical margins slightly on small screens */
+    }
+    header {
+        padding: 30px 0 15px 0;
+    }
+    footer {/* Base Reset and Fonts */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Lato', 'Open Sans', Arial, Helvetica, sans-serif; /* Changed body font to Lato */
+    /* Subtle Gradient Background */
+    background: linear-gradient(to bottom, #1D3557, #13243B); /* Darker blue at the bottom */
+    color: #fff;
+    line-height: 1.6;
+    min-height: 100vh; /* Ensure gradient covers full viewport height */
+}
+
+/* Skip Link for Accessibility */
+.skip-link {
+    position: absolute;
+    left: 0;
+    top: -40px;
+    background: #2980B9;
+    color: #fff;
+    padding: 8px 16px;
+    z-index: 100;
+    transition: top 0.3s;
+    border-radius: 0 0 5px 5px;
+    text-decoration: none;
+}
+.skip-link:focus {
+    top: 0;
+    outline: 2px solid #fff;
+}
+
+/* Header */
+header {
+    padding: 40px 0 20px 0; /* Increased top and bottom padding */
+    text-align: center;
+    background: none;
+}
+header h1 {
+    font-family: 'Roboto', sans-serif; /* Kept Roboto for the main H1 for its boldness */
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+}
+header p {
+    font-family: 'Lato', 'Open Sans', Arial, Helvetica, sans-serif; /* Applied Lato to header paragraph */
+    font-size: 1.3rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* Divider */
+.divider {
+    width: 100%;
+    max-width: 900px;
+    border: none;
+    border-top: 2px solid #a3b6d9;
+    margin: 60px auto; /* Increased vertical margin */
+}
+
+/* Main Content */
+main {
+    display: block;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Profile Section */
+.profile {
+    background: #fff;
+    color: #222f3e;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+    padding: 40px 30px; /* Increased padding inside the card */
+    max-width: 1000px;
+    margin: 60px auto; /* Increased vertical margin around the card */
+}
+.profile h2 {
+    font-family: 'Montserrat', sans-serif; /* Changed profile heading to Montserrat */
+    font-size: 1.7rem;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #1D3557;
+}
+.profile p {
+    font-family: 'Lato', 'Open Sans', Arial, Helvetica, sans-serif; /* Applied Lato to profile paragraphs */
+    font-size: 1.05rem;
+    margin-bottom: 20px; /* Slightly increased space between paragraphs */
+    text-align: center;
+}
+
+/* Repo List Section */
+.repo-list {
+    max-width: 1200px;
+    margin: 60px auto; /* Increased vertical margin */
+    padding: 20px;
+}
+.repo-list h2 {
+    font-family: 'Montserrat', sans-serif; /* Changed repo list heading to Montserrat */
+    text-align: center;
+    margin-bottom: 40px; /* Increased space below the heading */
+    font-size: 1.7rem;
+    color: #fff;
+}
+.repo-list .repo-list { /* This targets the inner div with class repo-list */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; /* Increased space between repo cards */
+    justify-content: center;
+}
+.repo-card {
+    background: #fff;
+    color: #222f3e;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.09);
+    padding: 25px; /* Slightly increased padding inside the card */
+    width: 300px;
+    margin-bottom: 15px; /* Slightly increased margin between stacked cards on smaller screens */
+    transition: transform 0.3s;
+}
+.repo-card:hover,
+.repo-card:focus-within {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(41,128,185,0.13);
+}
+.repo-card h3 {
+    font-family: 'Montserrat', sans-serif; /* Changed repo card heading to Montserrat */
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+.repo-card p {
+    font-family: 'Lato', 'Open Sans', Arial, Helvetica, sans-serif; /* Applied Lato to repo card paragraphs */
+    font-size: 0.98rem;
+    margin-bottom: 10px;
+    color: #666;
+}
+.repo-card a {
+    color: #2980B9;
+    text-decoration: none;
+    word-break: break-word;
+}
+.repo-card a:focus,
+.repo-card a:hover {
+    text-decoration: underline;
+    outline: 2px solid #2980B9;
+    border-radius: 3px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    font-size: 1rem;
+    color: #b5c6e0;
+    padding: 40px 0 20px 0; /* Increased top and bottom padding */
+    background: none;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center horizontally */
+    gap: 20px; /* Increased space between the icon and text */
+}
+
+.footer-content a {
+    display: inline-block; /* Allows width/height and vertical alignment */
+    width: 36px; /* Size of the icon container */
+    height: 36px;
+    position: relative;
+    transition: transform 0.25s, background-color 0.25s;
+    outline: none;
+    border-radius: 5px; /* Slightly rounded corners for the hover background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-content a img {
+    width: 30px; /* Size of the actual icon image */
+    height: 30px;
+    filter: invert(1); /* Invert color for visibility on dark background */
+    display: block;
+}
+
+.footer-content a:focus,
+.footer-content a:hover {
+    transform: scale(1.1);
+    background-color: rgba(255,255,255,0.08); /* Subtle background on hover/focus */
+    outline: 2px solid #2980B9;
+}
+
+/* Tooltip Styles */
+.tooltip {
+    visibility: hidden;
+    opacity: 0;
+    width: max-content;
+    background-color: #222f3e;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 6px 14px;
+    position: absolute;
+    z-index: 10;
+    bottom: 110%; /* Position above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.2s, visibility 0.2s;
+    font-size: 0.95rem;
+    pointer-events: none;
+    white-space: nowrap;
+}
+.footer-content a:hover .tooltip,
+.footer-content a:focus .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 900px) {
+    .profile {
+        max-width: 98vw;
+        padding: 30px 20px; /* Adjusted padding for smaller screens */
+    }
+    .repo-card {
+        width: 90vw;
+        padding: 20px; /* Adjusted padding for smaller screens */
+    }
+}
+@media screen and (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    .profile h2,
+    .repo-list h2 {
+        font-size: 1.2rem;
+    }
+    .repo-card {
+        width: 98vw;
+        padding: 15px 10px; /* Further adjusted padding for very small screens */
+    }
+    /* Adjustments for overall spacing on small screens */
+    .divider,
+    .profile,
+    .repo-list {
+        margin: 40px auto; /* Reduce vertical margins slightly on small screens */
+    }
+    header {
+        padding: 30px 0 15px 0;
+    }
+    footer {
+        padding: 30px 0 15px 0;
+    }
+}
+
+/* Focus outlines for accessibility */
+a:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+button:focus, input:focus, textarea:focus, select:focus {
+    outline: 2px solid #2980B9;
+    outline-offset: 2px;
+}
+        padding: 30px 0 15px 0;
     }
 }
 
