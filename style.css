@@ -1,41 +1,63 @@
+/* Base Reset and Fonts */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     background-color: #1D3557;
-    margin: 0;
-    padding: 0;
-    color: white;
-}
-header {
-    color: white;
-    padding: 30px 0;
-    text-align: center;
-}
-header h1 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 48px;
-    margin-bottom: 10px;
-}
-header p {
-   font-size: 22px;
-   font-weight: 300;
+    color: #fff;
+    line-height: 1.6;
 }
 
-/* Divider Style */
+/* Skip Link for Accessibility */
+.skip-link {
+    position: absolute;
+    left: 0;
+    top: -40px;
+    background: #2980B9;
+    color: #fff;
+    padding: 8px 16px;
+    z-index: 100;
+    transition: top 0.3s;
+    border-radius: 0 0 5px 5px;
+    text-decoration: none;
+}
+.skip-link:focus {
+    top: 0;
+    outline: 2px solid #fff;
+}
+
+/* Header */
+header {
+    padding: 32px 0 10px 0;
+    text-align: center;
+    background: none;
+}
+header h1 {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+}
+header p {
+    font-size: 1.3rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* Divider */
 .divider {
     width: 100%;
     max-width: 900px;
-    height: 0;
     border: none;
     border-top: 2px solid #a3b6d9;
     margin: 40px auto;
 }
 
-/* Contact Me Section - at top */
+/* Contact Me Section */
 .contact-top {
     max-width: 1200px;
     margin: 0 auto 40px auto;
@@ -43,18 +65,20 @@ header p {
     text-align: center;
 }
 .contact-top h2 {
-    font-size: 28px;
+    font-size: 1.8rem;
     margin-bottom: 20px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
-.contact-top .social-icons {
+
+/* Social Icons */
+.social-icons {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 30px;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
-.contact-top .social-icons a {
+.social-icons a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,23 +87,25 @@ header p {
     border-radius: 8px;
     background-color: transparent;
     text-decoration: none;
-    transition: transform 0.3s ease, background-color 0.3s ease;
     position: relative;
+    transition: transform 0.25s, background-color 0.25s;
+    outline: none;
 }
-.contact-top .social-icons img {
+.social-icons img {
     width: 36px;
     height: 36px;
     object-fit: contain;
     filter: invert(1);
     display: block;
 }
-.contact-top .social-icons a:hover {
+.social-icons a:focus, .social-icons a:hover {
     transform: scale(1.1);
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255,255,255,0.08);
+    outline: 2px solid #2980B9;
 }
 
-/* Tooltip styles */
-.contact-top .social-icons .tooltip {
+/* Tooltip Styles */
+.tooltip {
     visibility: hidden;
     opacity: 0;
     width: max-content;
@@ -90,89 +116,149 @@ header p {
     padding: 6px 14px;
     position: absolute;
     z-index: 10;
-    bottom: 110%; /* Arriba del icono */
+    bottom: 110%;
     left: 50%;
     transform: translateX(-50%);
-    transition: opacity 0.2s;
-    font-size: 14px;
+    transition: opacity 0.2s, visibility 0.2s;
+    font-size: 0.95rem;
     pointer-events: none;
     white-space: nowrap;
 }
-.contact-top .social-icons a:hover .tooltip,
-.contact-top .social-icons a:focus .tooltip {
+.social-icons a:hover .tooltip,
+.social-icons a:focus .tooltip {
     visibility: visible;
     opacity: 1;
 }
 
-section.profile {
+/* Main Content */
+main {
+    display: block;
     max-width: 1200px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: white;
-    color: #333;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
-section.profile h2 {
-    font-size: 28px;
+
+/* Profile Section */
+.profile {
+    background: #fff;
+    color: #222f3e;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+    padding: 32px 20px;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+.profile h2 {
+    font-size: 1.7rem;
     margin-bottom: 15px;
     text-align: center;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    color: #1D3557;
 }
-section.profile p {
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 20px;
+.profile p {
+    font-size: 1.05rem;
+    margin-bottom: 18px;
     text-align: center;
 }
 
-section.repo-list {
+/* Repo List Section */
+.repo-list {
     max-width: 1200px;
     margin: 40px auto;
     padding: 20px;
 }
-h2 {
+.repo-list h2 {
     text-align: center;
     margin-bottom: 30px;
-    font-size: 28px;
-    font-family: 'Roboto', sans-serif;
+    font-size: 1.7rem;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    color: #fff;
 }
-.repo-list {
+.repo-list .repo-list {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
 }
 .repo-card {
-    background-color: white;
+    background: #fff;
+    color: #222f3e;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.09);
     padding: 20px;
     width: 300px;
-    transition: transform 0.3s ease;
+    margin-bottom: 10px;
+    transition: transform 0.3s;
 }
-.repo-card:hover {
+.repo-card:hover,
+.repo-card:focus-within {
     transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(41,128,185,0.13);
 }
 .repo-card h3 {
-    font-size: 20px;
+    font-size: 1.2rem;
     margin-bottom: 10px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 .repo-card p {
-    font-size: 14px;
+    font-size: 0.98rem;
     margin-bottom: 10px;
     color: #666;
 }
-a {
-    text-decoration: none;
+.repo-card a {
     color: #2980B9;
+    text-decoration: none;
+    word-break: break-word;
 }
-a:hover {
+.repo-card a:focus,
+.repo-card a:hover {
     text-decoration: underline;
+    outline: 2px solid #2980B9;
+    border-radius: 3px;
 }
-@media screen and (max-width: 768px) {
-    .repo-card {
-        width: 100%;
-        margin-bottom: 20px;
+
+/* Footer */
+footer {
+    text-align: center;
+    font-size: 1rem;
+    color: #b5c6e0;
+    padding: 28px 0 16px 0;
+    background: none;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 900px) {
+    .profile, .repo-card {
+        max-width: 98vw;
+        padding: 16px 8px;
     }
+    .repo-card {
+        width: 90vw;
+    }
+}
+@media screen and (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    .profile h2,
+    .repo-list h2 {
+        font-size: 1.2rem;
+    }
+    .social-icons {
+        gap: 18px;
+    }
+    .repo-card {
+        width: 98vw;
+        padding: 12px 4px;
+    }
+}
+
+/* Focus outlines for accessibility */
+a:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+button:focus, input:focus, textarea:focus, select:focus {
+    outline: 2px solid #2980B9;
+    outline-offset: 2px;
 }
