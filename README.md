@@ -1,13 +1,14 @@
 # [Sergio Romero - Professional Portfolio](https://rsergio.com/)
 
-Welcome to the repository for my personal portfolio, showcasing my expertise in **Site Reliability Engineering (SRE)** and **Solutions Architecture**. This project contains the source code for my GitHub Pages site, where I present my professional background, skills, and dynamic list of public GitHub repositories.
+Welcome to the repository for my personal portfolio, showcasing my expertise in **Site Reliability Engineering (SRE)**. This project contains the source code for my GitHub Pages site, where I present my professional background, experience, and a dynamic list of public GitHub repositories.
 
 ## Features
 
-- **Social Media Integration**: Links to my GitHub, LinkedIn, and Credly profiles, offering access to my projects, professional network, and certifications.
-- **Skills Showcase**: A detailed section listing my core competencies in cloud infrastructure, automation, and DevOps, including tools like Terraform, Kubernetes, and Docker.
+- **Social Media Integration**: Links to my GitHub, LinkedIn, Credly, and Medium profiles, offering access to my projects, professional network, and certifications.
+- **About Me**: A section outlining my professional background and experience.
 - **Dynamic GitHub Repositories**: Real-time display of my public repositories using the GitHub API, allowing visitors to explore my open-source work.
-  
+- **Accessibility & SEO**: Includes skip-to-content navigation, improved focus styles, ARIA labels, and SEO meta tags for better inclusivity and discoverability.
+
 ## Technologies Used
 
 - **HTML5 & CSS3**: For the structure and styling of the portfolio.
@@ -17,7 +18,7 @@ Welcome to the repository for my personal portfolio, showcasing my expertise in 
 
 ## How It Works
 
-The portfolio is a static website hosted on [GitHub Pages](https://rsergio07.github.io). It includes an About Me section, a list of top skills, and a dynamically updated GitHub repository list. Data for repositories is fetched using the GitHub API and presented in a visually appealing card-based format.
+The portfolio is a static website hosted on [GitHub Pages](https://rsergio07.github.io). It includes an About Me section, links to social media profiles, and a dynamically updated GitHub repository list. Data for repositories is fetched using the GitHub API and presented in a visually appealing card-based format. The site is designed with accessibility and SEO best practices in mind.
 
 ### How to Run Locally
 
@@ -29,4 +30,4 @@ The portfolio is a static website hosted on [GitHub Pages](https://rsergio07.git
 
 ---
 
-Thanks for visiting my portfolio!
+Thanks for visiting my portfolio! If you have any questions or feedback, feel free to reach out.
