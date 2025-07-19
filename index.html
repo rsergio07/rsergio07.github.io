@@ -46,6 +46,7 @@
             <h2>GitHub Repositories</h2>
             <div class="repo-list" id="repo-list">
                 </div>
+            <button id="load-more-button" class="load-more-button">Load More Projects</button>
         </section>
     </main>
 
@@ -70,26 +71,39 @@
             this.style.top = '-40px';
         });
 
-        // Fetch repositories tagged with the 'portfolio' topic
-        let repositories = [];
+        let allRepositories = []; // Stores all fetched repositories
+        let currentIndex = 0; // Tracks how many repositories have been displayed
+        const reposPerPage = 3; // Number of repositories to display initially and per load
+        const loadMoreButton = document.getElementById('load-more-button');
+        const repoListContainer = document.getElementById('repo-list');
+
         function fetchShowcaseRepos() {
             fetch('https://api.github.com/search/repositories?q=user:rsergio07+topic:portfolio')
-                .then(response => response.json())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
                 .then(data => {
-                    repositories = data.items;
-                    displayRepos(repositories);
+                    allRepositories = data.items;
+                    currentIndex = 0; // Reset index in case of refetch
+                    displayNextRepos(); // Display the first set of repos
                 })
                 .catch(error => {
                     console.error('Error fetching repository data:', error);
-                    const repoList = document.getElementById('repo-list');
-                    repoList.innerHTML = `<p>Unable to fetch repositories at this time.</p>`;
+                    repoListContainer.innerHTML = `<p>Unable to fetch repositories at this time.</p>`;
+                    if (loadMoreButton) {
+                        loadMoreButton.classList.add('hidden'); // Hide button on error
+                    }
                 });
         }
 
-        function displayRepos(repos) {
-            const repoList = document.getElementById('repo-list');
-            repoList.innerHTML = '';
-            repos.forEach(repo => {
+        function displayNextRepos() {
+            const endIndex = currentIndex + reposPerPage;
+            const reposToDisplay = allRepositories.slice(currentIndex, endIndex);
+
+            reposToDisplay.forEach(repo => {
                 const repoCard = document.createElement('div');
                 repoCard.classList.add('repo-card');
                 repoCard.innerHTML = `
@@ -98,10 +112,29 @@
                     </h3>
                     <p>${repo.description ? repo.description : "No description provided."}</p>
                 `;
-                repoList.appendChild(repoCard);
+                repoListContainer.appendChild(repoCard);
             });
+
+            currentIndex = endIndex; // Update index for next load
+
+            // Hide or show the load more button
+            if (currentIndex >= allRepositories.length) {
+                if (loadMoreButton) {
+                    loadMoreButton.classList.add('hidden'); // All repos displayed
+                }
+            } else {
+                if (loadMoreButton) {
+                    loadMoreButton.classList.remove('hidden'); // More repos available
+                }
+            }
         }
 
+        // Event listener for the Load More button
+        if (loadMoreButton) {
+            loadMoreButton.addEventListener('click', displayNextRepos);
+        }
+
+        // Initial fetch of repos when the page loads
         fetchShowcaseRepos();
     </script>
 </body>
