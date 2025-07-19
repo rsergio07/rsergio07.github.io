@@ -5,12 +5,11 @@
     box-sizing: border-box;
 }
 body {
-    font-family: 'Lato', 'Open Sans', Arial, Helvetica, sans-serif; /* Changed body font to Lato */
-    /* Subtle Gradient Background */
-    background: linear-gradient(to bottom, #1D3557, #13243B); /* Darker blue at the bottom */
+    font-family: 'Lato', 'Open Sans', Arial, Helvetica, sans-serif;
+    background: linear-gradient(to bottom, #1D3557, #13243B);
     color: #fff;
     line-height: 1.6;
-    min-height: 100vh; /* Ensure gradient covers full viewport height */
+    min-height: 100vh;
 }
 
 /* Skip Link for Accessibility */
@@ -33,19 +32,19 @@ body {
 
 /* Header */
 header {
-    padding: 40px 0 20px 0; /* Increased top and bottom padding */
+    padding: 40px 0 20px 0;
     text-align: center;
     background: none;
 }
 header h1 {
-    font-family: 'Roboto', sans-serif; /* Kept Roboto for the main H1 for its boldness */
+    font-family: 'Roboto', sans-serif;
     font-size: 2.8rem;
     font-weight: 700;
     margin-bottom: 8px;
     letter-spacing: 2px;
 }
 header p {
-    font-family: 'Lato', 'Open Sans', Arial, Helvetica, sans-serif; /* Applied Lato to header paragraph */
+    font-family: 'Lato', 'Open Sans', Arial, Helvetica, sans-serif;
     font-size: 1.3rem;
     font-weight: 300;
     letter-spacing: 1px;
@@ -57,7 +56,7 @@ header p {
     max-width: 900px;
     border: none;
     border-top: 2px solid #a3b6d9;
-    margin: 60px auto; /* Increased vertical margin */
+    margin: 60px auto;
 }
 
 /* Main Content */
@@ -74,92 +73,104 @@ main {
     color: #222f3e;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.07);
-    padding: 40px 30px; /* Increased padding inside the card */
+    padding: 40px 30px;
     max-width: 1000px;
-    margin: 60px auto; /* Increased vertical margin around the card */
+    margin: 60px auto;
 }
 .profile h2 {
-    font-family: 'Montserrat', sans-serif; /* Changed profile heading to Montserrat */
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.7rem;
     margin-bottom: 15px;
     text-align: center;
     color: #1D3557;
 }
 .profile p {
-    font-family: 'Lato', 'Open Sans', Arial, Helvetica, sans-serif; /* Applied Lato to profile paragraphs */
+    font-family: 'Lato', 'Open Sans', Arial, Helvetica, sans-serif;
     font-size: 1.05rem;
-    margin-bottom: 20px; /* Slightly increased space between paragraphs */
+    margin-bottom: 20px;
     text-align: center;
 }
 
-/* Repo List Section */
-.repo-list {
+/* Repo List Section & Medium Articles List (Shared Styles) */
+.repo-list, .medium-articles-list {
     max-width: 1200px;
-    margin: 60px auto; /* Increased vertical margin */
+    margin: 60px auto;
     padding: 20px;
 }
-.repo-list h2 {
-    font-family: 'Montserrat', sans-serif; /* Changed repo list heading to Montserrat */
+.repo-list h2, .medium-articles-list h2 {
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
-    margin-bottom: 40px; /* Increased space below the heading */
+    margin-bottom: 40px;
     font-size: 1.7rem;
     color: #fff;
 }
-.repo-list .repo-list { /* This targets the inner div with class repo-list */
+
+/* Repo Cards & Article Cards (Shared Container & Card Styles) */
+.repo-list .repo-list,
+.medium-articles-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px; /* Increased space between repo cards */
+    gap: 30px;
     justify-content: center;
 }
-.repo-card {
+
+.repo-card, .article-card {
     background: #fff;
     color: #222f3e;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.09);
-    padding: 25px; /* Slightly increased padding inside the card */
+    padding: 25px;
     width: 300px;
-    margin-bottom: 15px; /* Slightly increased margin between stacked cards on smaller screens */
+    margin-bottom: 15px;
     transition: transform 0.3s;
+    /* Removed flex-direction, justify-content for simplicity as content is now minimal */
 }
 .repo-card:hover,
-.repo-card:focus-within {
+.repo-card:focus-within,
+.article-card:hover,
+.article-card:focus-within {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(41,128,185,0.13);
 }
-.repo-card h3 {
-    font-family: 'Montserrat', sans-serif; /* Changed repo card heading to Montserrat */
+.repo-card h3, .article-card h3 {
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
-    margin-bottom: 10px;
+    margin-bottom: 0; /* No margin below if only H3/link */
 }
-.repo-card p {
-    font-family: 'Lato', 'Open Sans', Arial, Helvetica, sans-serif; /* Applied Lato to repo card paragraphs */
+.repo-card p { /* Kept for GitHub repos */
+    font-family: 'Lato', 'Open Sans', Arial, Helvetica, sans-serif;
     font-size: 0.98rem;
     margin-bottom: 10px;
     color: #666;
+    flex-grow: 1;
 }
-.repo-card a {
+.repo-card a, .article-card a {
     color: #2980B9;
     text-decoration: none;
     word-break: break-word;
 }
 .repo-card a:focus,
-.repo-card a:hover {
+.repo-card a:hover,
+.article-card a:focus,
+.article-card a:hover {
     text-decoration: underline;
     outline: 2px solid #2980B9;
     border-radius: 3px;
 }
 
-/* Load More Button */
+/* Removed specific styles for Medium article cards like .article-thumbnail, .article-date */
+
+/* Load More Button (Shared Styles) */
 .load-more-button {
-    display: block; /* Ensures it takes full width and can be centered with margin auto */
-    margin: 40px auto 20px auto; /* Centered with top and bottom margin */
+    display: block;
+    margin: 40px auto 20px auto;
     padding: 15px 30px;
-    background-color: #2980B9; /* Your existing blue accent color */
+    background-color: #2980B9;
     color: #fff;
     border: none;
     border-radius: 5px;
     font-size: 1.1rem;
-    font-family: 'Lato', sans-serif; /* Consistent with body text */
+    font-family: 'Lato', sans-serif;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     outline: none;
@@ -167,11 +178,11 @@ main {
 
 .load-more-button:hover,
 .load-more-button:focus {
-    background-color: #3498DB; /* Slightly lighter blue on hover/focus */
-    transform: translateY(-2px); /* Subtle lift effect */
+    background-color: #3498DB;
+    transform: translateY(-2px);
 }
 
-/* Hide the button when all repos are loaded */
+/* Hide the button when all items are loaded */
 .load-more-button.hidden {
     display: none;
 }
@@ -181,41 +192,41 @@ footer {
     text-align: center;
     font-size: 1rem;
     color: #b5c6e0;
-    padding: 40px 0 20px 0; /* Increased top and bottom padding */
+    padding: 40px 0 20px 0;
     background: none;
 }
 
 .footer-content {
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center horizontally */
-    gap: 20px; /* Increased space between the icon and text */
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
 .footer-content a {
-    display: inline-block; /* Allows width/height and vertical alignment */
-    width: 36px; /* Size of the icon container */
+    display: inline-block;
+    width: 36px;
     height: 36px;
     position: relative;
     transition: transform 0.25s, background-color 0.25s;
     outline: none;
-    border-radius: 5px; /* Slightly rounded corners for the hover background */
+    border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .footer-content a img {
-    width: 30px; /* Size of the actual icon image */
+    width: 30px;
     height: 30px;
-    filter: invert(1); /* Invert color for visibility on dark background */
+    filter: invert(1);
     display: block;
 }
 
 .footer-content a:focus,
 .footer-content a:hover {
     transform: scale(1.1);
-    background-color: rgba(255,255,255,0.08); /* Subtle background on hover/focus */
+    background-color: rgba(255,255,255,0.08);
     outline: 2px solid #2980B9;
 }
 
@@ -231,7 +242,7 @@ footer {
     padding: 6px 14px;
     position: absolute;
     z-index: 10;
-    bottom: 110%; /* Position above the icon */
+    bottom: 110%;
     left: 50%;
     transform: translateX(-50%);
     transition: opacity 0.2s, visibility 0.2s;
@@ -249,11 +260,11 @@ footer {
 @media screen and (max-width: 900px) {
     .profile {
         max-width: 98vw;
-        padding: 30px 20px; /* Adjusted padding for smaller screens */
+        padding: 30px 20px;
     }
-    .repo-card {
+    .repo-card, .article-card {
         width: 90vw;
-        padding: 20px; /* Adjusted padding for smaller screens */
+        padding: 20px;
     }
 }
 @media screen and (max-width: 600px) {
@@ -261,18 +272,20 @@ footer {
         font-size: 2rem;
     }
     .profile h2,
-    .repo-list h2 {
+    .repo-list h2,
+    .medium-articles-list h2 {
         font-size: 1.2rem;
     }
-    .repo-card {
+    .repo-card, .article-card {
         width: 98vw;
-        padding: 15px 10px; /* Further adjusted padding for very small screens */
+        padding: 15px 10px;
     }
     /* Adjustments for overall spacing on small screens */
     .divider,
     .profile,
-    .repo-list {
-        margin: 40px auto; /* Reduce vertical margins slightly on small screens */
+    .repo-list,
+    .medium-articles-list {
+        margin: 40px auto;
     }
     header {
         padding: 30px 0 15px 0;
@@ -282,7 +295,7 @@ footer {
     }
     /* Responsive adjustments for Load More button */
     .load-more-button {
-        width: 90%; /* Make button wider on small screens */
+        width: 90%;
         font-size: 1rem;
         padding: 12px 20px;
     }
