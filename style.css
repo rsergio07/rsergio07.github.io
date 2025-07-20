@@ -261,7 +261,6 @@ footer {
     align-items: center;
 }
 
-/* This is the comment that needed the empty line before it */
 /* Removed duplicate 'display: flex;' as it's already on .footer-content */
 .footer-content a img {
     width: 30px;
