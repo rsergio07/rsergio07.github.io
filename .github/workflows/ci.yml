@@ -11,7 +11,7 @@ on:
 
 jobs:
   lint:
-    name: Lint Code
+    name: Lint CSS
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -20,37 +20,15 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22.0.0'
+          node-version: '20'
 
-      - name: Install dependencies for linting (e.g., stylelint, html-validate)
+      - name: Install Stylelint
         run: |
-          npm install -g stylelint stylelint-config-standard html-validate
-
-      - name: Lint HTML
-        run: |
-          # html-validate index.html # Basic check for index.html
-          # For more comprehensive HTML validation, you might need a config file
-          # or a more specific setup depending on your HTML complexity.
-          # For now, we'll assume basic validation or rely more on CSS/JS linting.
-          echo "HTML linting placeholder - manual validation or dedicated config needed for full power."
+          npm install -g stylelint stylelint-config-standard
 
       - name: Lint CSS
         run: |
           stylelint "style.css" # Lints your main CSS file
-          # If you have more CSS files, adjust the glob pattern, e.g., "css/**/*.css"
-
-      - name: Lint JavaScript
-        # For simple inline JS, direct linting might be tricky without a full ESLint setup.
-        # This is a placeholder. For real JS linting, you'd typically have an ESLint config.
-        # For this portfolio, the inline script is small, so this might not be critical
-        # but is included for completeness of a CI pipeline idea.
-        run: |
-          echo "JavaScript linting placeholder - consider ESLint for complex JS."
-          # Example for ESLint if you install it:
-          # npm install -g eslint
-          # eslint your-script-file.js
-          # For inline script, it's harder to lint directly.
-          # You could extract the script to a .js file for better linting.
 
   link_check:
     name: Check Broken Links
@@ -61,15 +39,9 @@ jobs:
 
       - name: Install link checker
         run: |
-          npm install -g broken-link-checker # A popular Node.js based link checker
+          npm install -g broken-link-checker
 
       - name: Run link checker
-        # The 'file' flag checks local HTML files. Adjust path if your index.html is not in root.
         run: |
-          blc index.html --recursive --exclude "https://yourdomain.com" --filter-level 3 || true
-          # --recursive: checks links within linked pages
-          # --exclude: ignores checking your own domain (useful for relative links or during development)
-          #            You might remove this if you want to check your deployed site's links.
-          # --filter-level 3: Shows errors and warnings
-          # || true: Makes the step pass even if broken links are found, so other jobs can continue.
-          #          Remove '|| true' if you want the workflow to fail on broken links.
+          blc index.html --recursive --exclude "https://rsergio.com" --filter-level 3 || true
+          # Remove '|| true' if you want the workflow to fail on broken links.
