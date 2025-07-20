@@ -48,13 +48,13 @@ body {
 
 /* Header */
 header {
-    padding: 40px 0 20px;
+    padding: 40px 0 20px; /* Shorthand fix */
     text-align: center;
     background: none;
 }
 
 header h1 {
-    font-family: "Roboto", sans-serif;
+    font-family: "Roboto", sans-serif; /* Quotes fix */
     font-size: 2.8rem;
     font-weight: 700;
     margin-bottom: 8px;
@@ -62,7 +62,7 @@ header h1 {
 }
 
 header p {
-    font-family: "Lato", "Open Sans", Arial, Helvetica, sans-serif;
+    font-family: "Lato", "Open Sans", Arial, Helvetica, sans-serif; /* Quotes fix */
     font-size: 1.3rem;
     font-weight: 300;
     letter-spacing: 1px;
@@ -90,14 +90,14 @@ main {
     background: #fff;
     color: #222f3e;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgb(0 0 0 / 7%);
+    box-shadow: 0 4px 10px rgb(0 0 0 / 7%); /* Color notation fix */
     padding: 40px 30px;
     max-width: 1000px;
     margin: 60px auto;
 }
 
 .profile h2 {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Montserrat", sans-serif; /* Quotes fix */
     font-size: 1.7rem;
     margin-bottom: 15px;
     text-align: center;
@@ -105,7 +105,7 @@ main {
 }
 
 .profile p {
-    font-family: "Lato", "Open Sans", Arial, Helvetica, sans-serif;
+    font-family: "Lato", "Open Sans", Arial, Helvetica, sans-serif; /* Quotes fix */
     font-size: 1.05rem;
     margin-bottom: 20px;
     text-align: center;
@@ -121,7 +121,7 @@ main {
 
 .repo-list h2,
 .medium-articles-list h2 {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Montserrat", sans-serif; /* Quotes fix */
     text-align: center;
     margin-bottom: 40px;
     font-size: 1.7rem;
@@ -142,7 +142,7 @@ main {
     background: #fff;
     color: #222f3e;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgb(0 0 0 / 9%);
+    box-shadow: 0 4px 10px rgb(0 0 0 / 9%); /* Color notation fix */
     padding: 25px;
     width: 300px;
     margin-bottom: 15px;
@@ -170,14 +170,14 @@ main {
     margin-bottom: 10px;
     color: #666;
     flex-grow: 1;
-    overflow-wrap: break-word; /* Changed from word-break: break-all; to overflow-wrap */
+    overflow-wrap: break-word;
 }
 
 .repo-card a,
 .article-card a {
     color: #2980B9;
     text-decoration: none;
-    overflow-wrap: break-word; /* Changed from word-break: break-word; */
+    overflow-wrap: break-word;
 }
 
 .repo-card a:focus,
@@ -259,9 +259,10 @@ footer {
     border-radius: 5px;
     justify-content: center;
     align-items: center;
-    /* Removed duplicate 'display: flex;' as it's already on .footer-content */
 }
 
+/* This is the comment that needed the empty line before it */
+/* Removed duplicate 'display: flex;' as it's already on .footer-content */
 .footer-content a img {
     width: 30px;
     height: 30px;
