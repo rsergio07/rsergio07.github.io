@@ -161,7 +161,8 @@
                 })
                 .then(data => {
                     if (data.status === 'ok' && data.items && data.items.length > 0) {
-                        allMediumArticles = data.items.filter(item => item.categories.length > 0);
+                        // Show ALL articles - remove the categories filter
+                        allMediumArticles = data.items;
                         currentMediumIndex = 0;
                         displayNextMediumArticles();
                     } else {
@@ -176,7 +177,7 @@
                     }
                 });
         }
-
+        
         function displayNextMediumArticles() {
             const endIndex = currentMediumIndex + mediumArticlesPerPage;
             const articlesToDisplay = allMediumArticles.slice(currentMediumIndex, endIndex);
