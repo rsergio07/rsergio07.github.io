@@ -7,12 +7,13 @@
     <meta name="description" content="Portfolio of Sergio Romero Sanchez, Senior Site Reliability Engineer and Solutions Architect. Showcasing experience in cloud infrastructure, SRE, and automation with selected GitHub repositories.">
     <meta property="og:title" content="Sergio Romero Sanchez - Professional Portfolio">
     <meta property="og:description" content="Senior Site Reliability Engineer and Solutions Architect. Discover my expertise in cloud infrastructure, SRE, and automation.">
-    <meta property="og:image" content="https://yourdomain.com/assets/icons/icons8-github.svg">
-    <meta property="og:url" content="https://yourdomain.com">
+    <meta property="og:image" content="https://rsergio.com/assets/icons/linkedin.svg">
+    <meta property="og:url" content="https://rsergio.com">
+    <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@600;700&family=Open+Sans:wght@300;400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -72,145 +73,175 @@
     </footer>
 
     <script>
-        // Accessibility: focus style for skip link
-        document.querySelector('.skip-link').addEventListener('focus', function() {
-            this.style.top = '0';
-        });
-        document.querySelector('.skip-link').addEventListener('blur', function() {
-            this.style.top = '-40px';
-        });
+    // Accessibility: focus style for skip link
+    document.querySelector('.skip-link').addEventListener('focus', function() {
+        this.style.top = '0';
+    });
+    document.querySelector('.skip-link').addEventListener('blur', function() {
+        this.style.top = '-40px';
+    });
 
-        // --- GitHub Repositories Logic ---
-        let allGithubRepositories = [];
-        let currentGithubIndex = 0;
-        const githubReposPerPage = 3;
-        const loadMoreGithubButton = document.getElementById('load-more-github-button');
-        const githubRepoListContainer = document.getElementById('repo-list');
+    // --- Helper Function: Create Loading Skeletons ---
+    function createLoadingSkeleton(count) {
+        const skeletonHTML = `
+            <div class="skeleton-card">
+                <div class="skeleton-title"></div>
+                <div class="skeleton-text"></div>
+                <div class="skeleton-text"></div>
+                <div class="skeleton-text"></div>
+            </div>
+        `.repeat(count);
+        return skeletonHTML;
+    }
 
-        function fetchShowcaseRepos() {
-            fetch('https://api.github.com/search/repositories?q=user:rsergio07+topic:portfolio')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    allGithubRepositories = data.items;
-                    currentGithubIndex = 0;
-                    displayNextGithubRepos();
-                })
-                .catch(error => {
-                    console.error('Error fetching GitHub repository data:', error);
-                    githubRepoListContainer.innerHTML = `<p>Unable to fetch GitHub repositories at this time.</p>`;
-                    if (loadMoreGithubButton) {
-                        loadMoreGithubButton.classList.add('hidden');
-                    }
-                });
+    // --- GitHub Repositories Logic ---
+    let allGithubRepositories = [];
+    let currentGithubIndex = 0;
+    const githubReposPerPage = 3;
+    const loadMoreGithubButton = document.getElementById('load-more-github-button');
+    const githubRepoListContainer = document.getElementById('repo-list');
+
+    function showGithubLoading() {
+        githubRepoListContainer.innerHTML = createLoadingSkeleton(3);
+        if (loadMoreGithubButton) {
+            loadMoreGithubButton.classList.add('hidden');
         }
+    }
 
-        function displayNextGithubRepos() {
-            const endIndex = currentGithubIndex + githubReposPerPage;
-            const reposToDisplay = allGithubRepositories.slice(currentGithubIndex, endIndex);
-
-            reposToDisplay.forEach(repo => {
-                const repoCard = document.createElement('div');
-                repoCard.classList.add('repo-card');
-                repoCard.innerHTML = `
-                    <h3>
-                        <a href="${repo.html_url}" target="_blank" rel="noopener" aria-label="Visit ${repo.name} on GitHub">${repo.name}</a>
-                    </h3>
-                    <p>${repo.description ? repo.description : "No description provided."}</p>
-                `;
-                githubRepoListContainer.appendChild(repoCard);
-            });
-
-            currentGithubIndex = endIndex;
-
-            if (loadMoreGithubButton) {
-                if (currentGithubIndex >= allGithubRepositories.length) {
-                    loadMoreGithubButton.classList.add('hidden');
-                } else {
-                    loadMoreGithubButton.classList.remove('hidden');
+    function fetchShowcaseRepos() {
+        showGithubLoading();
+        
+        fetch('https://api.github.com/search/repositories?q=user:rsergio07+topic:portfolio')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
                 }
-            }
-        }
+                return response.json();
+            })
+            .then(data => {
+                allGithubRepositories = data.items;
+                currentGithubIndex = 0;
+                githubRepoListContainer.innerHTML = ''; // Clear loading skeleton
+                displayNextGithubRepos();
+            })
+            .catch(error => {
+                console.error('Error fetching GitHub repository data:', error);
+                githubRepoListContainer.innerHTML = `<p style="color: #fff; text-align: center; padding: 20px;">Unable to fetch GitHub repositories. Please check your connection and try again later.</p>`;
+                if (loadMoreGithubButton) {
+                    loadMoreGithubButton.classList.add('hidden');
+                }
+            });
+    }
+
+    function displayNextGithubRepos() {
+        const endIndex = currentGithubIndex + githubReposPerPage;
+        const reposToDisplay = allGithubRepositories.slice(currentGithubIndex, endIndex);
+
+        reposToDisplay.forEach(repo => {
+            const repoCard = document.createElement('div');
+            repoCard.classList.add('repo-card');
+            repoCard.innerHTML = `
+                <h3>
+                    <a href="${repo.html_url}" target="_blank" rel="noopener" aria-label="Visit ${repo.name} on GitHub">${repo.name}</a>
+                </h3>
+                <p>${repo.description ? repo.description : "No description provided."}</p>
+            `;
+            githubRepoListContainer.appendChild(repoCard);
+        });
+
+        currentGithubIndex = endIndex;
 
         if (loadMoreGithubButton) {
-            loadMoreGithubButton.addEventListener('click', displayNextGithubRepos);
-        }
-        fetchShowcaseRepos(); // Initial fetch for GitHub repos
-
-        // --- Medium Articles Logic ---
-        let allMediumArticles = [];
-        let currentMediumIndex = 0;
-        const mediumArticlesPerPage = 3; // Or 6, you can adjust this
-        const loadMoreMediumButton = document.getElementById('load-more-medium-button');
-        const mediumArticlesContainer = document.getElementById('medium-articles-container');
-
-        const mediumRSSFeedUrl = 'https://medium.com/feed/@sergiors07';
-        const rssToJsonApiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(mediumRSSFeedUrl)}`;
-
-        function fetchMediumArticles() {
-            fetch(rssToJsonApiUrl)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    if (data.status === 'ok' && data.items && data.items.length > 0) {
-                        // Show ALL articles - remove the categories filter
-                        allMediumArticles = data.items;
-                        currentMediumIndex = 0;
-                        displayNextMediumArticles();
-                    } else {
-                        throw new Error('No articles found or API error.');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error fetching Medium articles:', error);
-                    mediumArticlesContainer.innerHTML = `<p>Unable to fetch Medium articles at this time.</p>`;
-                    if (loadMoreMediumButton) {
-                        loadMoreMediumButton.classList.add('hidden');
-                    }
-                });
-        }
-        
-        function displayNextMediumArticles() {
-            const endIndex = currentMediumIndex + mediumArticlesPerPage;
-            const articlesToDisplay = allMediumArticles.slice(currentMediumIndex, endIndex);
-
-            articlesToDisplay.forEach(article => {
-                const articleCard = document.createElement('div');
-                articleCard.classList.add('article-card');
-                
-                const title = article.title;
-
-                articleCard.innerHTML = `
-                    <h3>
-                        <a href="${article.link}" target="_blank" rel="noopener" aria-label="Read ${title} on Medium">${title}</a>
-                    </h3>
-                `; // Simplified HTML: only title and link
-                mediumArticlesContainer.appendChild(articleCard);
-            });
-
-            currentMediumIndex = endIndex;
-
-            if (loadMoreMediumButton) {
-                if (currentMediumIndex >= allMediumArticles.length) {
-                    loadMoreMediumButton.classList.add('hidden');
-                } else {
-                    loadMoreMediumButton.classList.remove('hidden');
-                }
+            if (currentGithubIndex >= allGithubRepositories.length) {
+                loadMoreGithubButton.classList.add('hidden');
+            } else {
+                loadMoreGithubButton.classList.remove('hidden');
             }
         }
+    }
+
+    if (loadMoreGithubButton) {
+        loadMoreGithubButton.addEventListener('click', displayNextGithubRepos);
+    }
+    fetchShowcaseRepos(); // Initial fetch for GitHub repos
+
+    // --- Medium Articles Logic ---
+    let allMediumArticles = [];
+    let currentMediumIndex = 0;
+    const mediumArticlesPerPage = 3;
+    const loadMoreMediumButton = document.getElementById('load-more-medium-button');
+    const mediumArticlesContainer = document.getElementById('medium-articles-container');
+
+    const mediumRSSFeedUrl = 'https://medium.com/feed/@sergiors07';
+    const rssToJsonApiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(mediumRSSFeedUrl)}`;
+
+    function showMediumLoading() {
+        mediumArticlesContainer.innerHTML = createLoadingSkeleton(3);
+        if (loadMoreMediumButton) {
+            loadMoreMediumButton.classList.add('hidden');
+        }
+    }
+
+    function fetchMediumArticles() {
+        showMediumLoading();
+        
+        fetch(rssToJsonApiUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.status === 'ok' && data.items && data.items.length > 0) {
+                    allMediumArticles = data.items;
+                    currentMediumIndex = 0;
+                    mediumArticlesContainer.innerHTML = ''; // Clear loading skeleton
+                    displayNextMediumArticles();
+                } else {
+                    throw new Error('No articles found or API error.');
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching Medium articles:', error);
+                mediumArticlesContainer.innerHTML = `<p style="color: #fff; text-align: center; padding: 20px;">Unable to fetch Medium articles. Please check your connection and try again later.</p>`;
+                if (loadMoreMediumButton) {
+                    loadMoreMediumButton.classList.add('hidden');
+                }
+            });
+    }
+    
+    function displayNextMediumArticles() {
+        const endIndex = currentMediumIndex + mediumArticlesPerPage;
+        const articlesToDisplay = allMediumArticles.slice(currentMediumIndex, endIndex);
+
+        articlesToDisplay.forEach(article => {
+            const articleCard = document.createElement('div');
+            articleCard.classList.add('article-card');
+            
+            const title = article.title;
+
+            articleCard.innerHTML = `
+                <h3>
+                    <a href="${article.link}" target="_blank" rel="noopener" aria-label="Read ${title} on Medium">${title}</a>
+                </h3>
+            `;
+            mediumArticlesContainer.appendChild(articleCard);
+        });
+
+        currentMediumIndex = endIndex;
 
         if (loadMoreMediumButton) {
-            loadMoreMediumButton.addEventListener('click', displayNextMediumArticles);
+            if (currentMediumIndex >= allMediumArticles.length) {
+                loadMoreMediumButton.classList.add('hidden');
+            } else {
+                loadMoreMediumButton.classList.remove('hidden');
+            }
         }
-        fetchMediumArticles();
-    </script>
-</body>
-</html>
+    }
+
+    if (loadMoreMediumButton) {
+        loadMoreMediumButton.addEventListener('click', displayNextMediumArticles);
+    }
+    fetchMediumArticles();
+</script>
