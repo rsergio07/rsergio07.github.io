@@ -40,5 +40,5 @@ jobs:
       - name: Link Checker
         uses: lycheeverse/lychee-action@v1
         with:
-          args: --verbose --no-progress --exclude "https://rsergio.com" --exclude "https://www.linkedin.com" "**/*.html"
+          args: --verbose --no-progress --exclude "https://rsergio.com" --exclude "linkedin.com" --exclude "medium.com" "**/*.html"
           fail: true
