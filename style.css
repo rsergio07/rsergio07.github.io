@@ -69,7 +69,7 @@ body > * {
 
 /* Header */
 header {
-    padding: 40px 0 20px; /* Shorthand fix */
+    padding: 40px 0 20px;
     text-align: center;
     background: none;
 }
@@ -87,7 +87,7 @@ header p {
     font-size: 1.3rem;
     font-weight: 300;
     letter-spacing: 1px;
-    color: #e2e8f0; /* Softer white, easier on eyes */
+    color: #e2e8f0;
 }
 
 /* Divider */
@@ -112,7 +112,7 @@ main {
     background: #fff;
     color: #222f3e;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgb(0 0 0 / 7%); /* Color notation fix */
+    box-shadow: 0 4px 10px rgb(0 0 0 / 7%);
     padding: 40px 30px;
     max-width: 1000px;
     margin: 60px auto;
@@ -131,8 +131,8 @@ main {
     font-size: 1.05rem;
     margin-bottom: 20px;
     text-align: center;
-    color: #4a5568; /* Softer gray instead of pure black */
-    line-height: 1.7; /* Slightly more line spacing */
+    color: #4a5568;
+    line-height: 1.7;
 }
 
 /* Repo List Section & Medium Articles List (Shared Styles) */
@@ -173,18 +173,6 @@ main {
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
-}
-
-.repo-card,
-.article-card {
-    background: #fff;
-    color: #222f3e;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgb(0 0 0 / 9%); /* Color notation fix */
-    padding: 25px;
-    width: 300px;
-    margin-bottom: 15px;
-    transition: transform 0.3s;
 }
 
 .repo-card,
@@ -262,7 +250,10 @@ main {
 
 /* Load More Button (Shared Styles) */
 .load-more-button {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
     margin: 40px auto 20px;
     padding: 15px 30px;
     background-color: #2980B9;
@@ -272,19 +263,76 @@ main {
     font-size: 1.1rem;
     font-family: "Lato", sans-serif;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     outline: none;
+    position: relative;
 }
 
-.load-more-button:hover,
+.load-more-button .button-icon {
+    transition: transform 0.3s ease;
+}
+
+.load-more-button:hover {
+    background-color: #3498DB;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(41, 128, 185, 0.3);
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.load-more-button:hover .button-icon {
+    transform: translateY(3px);
+}
+
+.load-more-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(41, 128, 185, 0.3);
+}
+
 .load-more-button:focus {
     background-color: #3498DB;
     transform: translateY(-2px);
 }
 
+/* Loading state */
+.load-more-button.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.load-more-button.loading::after {
+    content: '';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 0.6s linear infinite;
+}
+
 /* Hide the button when all items are loaded */
 .load-more-button.hidden {
     display: none;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 4px 12px rgba(41, 128, 185, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 20px rgba(41, 128, 185, 0.5);
+    }
+}
+
+/* Spinner animation */
+@keyframes spin {
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
 }
 
 /* Footer */
@@ -308,26 +356,34 @@ footer {
     width: 36px;
     height: 36px;
     position: relative;
-    transition: transform 0.25s, background-color 0.25s;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), background-color 0.25s;
     outline: none;
     border-radius: 5px;
     justify-content: center;
     align-items: center;
 }
 
-/* Removed duplicate 'display: flex;' as it's already on .footer-content */
 .footer-content a img {
     width: 30px;
     height: 30px;
     filter: invert(1);
     display: block;
+    transition: filter 0.3s ease;
 }
 
 .footer-content a:focus,
 .footer-content a:hover {
-    transform: scale(1.1);
-    background-color: rgb(255 255 255 / 8%);
+    transform: scale(1.15) rotate(5deg);
+    background-color: rgb(255 255 255 / 12%);
     outline: 2px solid #2980B9;
+}
+
+.footer-content a:hover img {
+    filter: invert(1) brightness(1.2);
+}
+
+.footer-content a:active {
+    transform: scale(1.05) rotate(0deg);
 }
 
 /* Tooltip Styles */
@@ -357,58 +413,47 @@ footer {
     opacity: 1;
 }
 
-/* Responsive Design */
-@media screen and (width <= 900px) {
-    .profile {
-        max-width: 98vw;
-        padding: 30px 20px;
-    }
-
-    .repo-card,
-    .article-card {
-        width: 90vw;
-        padding: 20px;
-    }
+/* Scroll-triggered fade-in animations */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-@media screen and (width <= 600px) {
-    header h1 {
-        font-size: 2rem;
-    }
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-    .profile h2,
-    .repo-list h2,
-    .medium-articles-list h2 {
-        font-size: 1.2rem;
-    }
+/* Stagger animations for child elements */
+.fade-in-section.is-visible .repo-card,
+.fade-in-section.is-visible .article-card {
+    animation: fadeInUp 0.5s ease-out backwards;
+}
 
-    .repo-card,
-    .article-card {
-        width: 98vw;
-        padding: 15px 10px;
-    }
+.fade-in-section.is-visible .repo-card:nth-child(1),
+.fade-in-section.is-visible .article-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
 
-    /* Adjustments for overall spacing on small screens */
-    .divider,
-    .profile,
-    .repo-list,
-    .medium-articles-list {
-        margin: 40px auto;
-    }
+.fade-in-section.is-visible .repo-card:nth-child(2),
+.fade-in-section.is-visible .article-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
 
-    header {
-        padding: 30px 0 15px;
-    }
+.fade-in-section.is-visible .repo-card:nth-child(3),
+.fade-in-section.is-visible .article-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
 
-    footer {
-        padding: 30px 0 15px;
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-
-    /* Responsive adjustments for Load More button */
-    .load-more-button {
-        width: 90%;
-        font-size: 1rem;
-        padding: 12px 20px;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -456,7 +501,6 @@ footer {
     0% {
         background-position: -200% 0;
     }
-
     100% {
         background-position: 200% 0;
     }
@@ -464,4 +508,57 @@ footer {
 
 .hidden {
     display: none;
+}
+
+/* Responsive Design */
+@media screen and (width <= 900px) {
+    .profile {
+        max-width: 98vw;
+        padding: 30px 20px;
+    }
+
+    .repo-card,
+    .article-card {
+        width: 90vw;
+        padding: 20px;
+    }
+}
+
+@media screen and (width <= 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .profile h2,
+    .repo-list h2,
+    .medium-articles-list h2 {
+        font-size: 1.2rem;
+    }
+
+    .repo-card,
+    .article-card {
+        width: 98vw;
+        padding: 15px 10px;
+    }
+
+    .divider,
+    .profile,
+    .repo-list,
+    .medium-articles-list {
+        margin: 40px auto;
+    }
+
+    header {
+        padding: 30px 0 15px;
+    }
+
+    footer {
+        padding: 30px 0 15px;
+    }
+
+    .load-more-button {
+        width: 90%;
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
 }
