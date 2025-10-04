@@ -1,5 +1,22 @@
-.DS_Store.DS_Store
+# macOS
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Node
 node_modules/
+npm-debug.log*
 package-lock.json
 package.json
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db
