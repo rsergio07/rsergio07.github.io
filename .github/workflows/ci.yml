@@ -43,5 +43,4 @@ jobs:
 
       - name: Run link checker
         run: |
-          blc index.html --recursive --exclude "https://rsergio.com" --filter-level 3 || true
-          # Remove '|| true' if you want the workflow to fail on broken links.
+          blc index.html --recursive --exclude "https://rsergio.com" --filter-level 3
