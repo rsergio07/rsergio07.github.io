@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-        <meta http-equiv="Content-Security-Policy" 
+    <meta http-equiv="Content-Security-Policy" 
           content="default-src 'self'; 
                    script-src 'self' 'unsafe-inline'; 
                    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; 
@@ -35,7 +35,7 @@
     <div class="divider"></div>
 
     <main id="maincontent">
-        <section class="profile" aria-label="About Me">
+        <section class="profile fade-in-section" aria-label="About Me">
             <h2>About Me</h2>
             <p>
                 I am a Senior Site Reliability Engineer (SRE) and Solutions Architect with 20+ years of experience designing and implementing scalable, secure, and high-performing cloud infrastructures. My expertise spans cloud automation, migration strategies, and enterprise IT transformations, helping businesses optimize their reliability, security, and performance.
@@ -50,20 +50,30 @@
 
         <div class="divider"></div>
 
-        <section class="repo-list" aria-label="GitHub Repositories">
+        <section class="repo-list fade-in-section" aria-label="GitHub Repositories">
             <h2>GitHub Repositories</h2>
             <div class="repo-list" id="repo-list">
-                </div>
-            <button id="load-more-github-button" class="load-more-button">Load More Projects</button>
+            </div>
+            <button id="load-more-github-button" class="load-more-button">
+                Load More Projects
+                <svg class="button-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 12L8 4M8 12L4 8M8 12L12 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
         </section>
 
         <div class="divider"></div>
 
-        <section class="medium-articles-list" aria-label="Medium Articles">
-            <h2>Latest Articles on Medium</h2>
+        <section class="medium-articles-list fade-in-section" aria-label="Medium Articles">
+            <h2>Articles on Medium</h2>
             <div class="medium-articles-container" id="medium-articles-container">
-                </div>
-            <button id="load-more-medium-button" class="load-more-button">Load More Articles</button>
+            </div>
+            <button id="load-more-medium-button" class="load-more-button">
+                Load More Articles
+                <svg class="button-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 12L8 4M8 12L4 8M8 12L12 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
         </section>
     </main>
 
@@ -128,7 +138,7 @@
             .then(data => {
                 allGithubRepositories = data.items;
                 currentGithubIndex = 0;
-                githubRepoListContainer.innerHTML = ''; // Clear loading skeleton
+                githubRepoListContainer.innerHTML = '';
                 displayNextGithubRepos();
             })
             .catch(error => {
@@ -141,6 +151,10 @@
     }
 
     function displayNextGithubRepos() {
+        if (loadMoreGithubButton) {
+            loadMoreGithubButton.classList.add('loading');
+        }
+
         const endIndex = currentGithubIndex + githubReposPerPage;
         const reposToDisplay = allGithubRepositories.slice(currentGithubIndex, endIndex);
 
@@ -159,6 +173,8 @@
         currentGithubIndex = endIndex;
 
         if (loadMoreGithubButton) {
+            loadMoreGithubButton.classList.remove('loading');
+            
             if (currentGithubIndex >= allGithubRepositories.length) {
                 loadMoreGithubButton.classList.add('hidden');
             } else {
@@ -170,7 +186,8 @@
     if (loadMoreGithubButton) {
         loadMoreGithubButton.addEventListener('click', displayNextGithubRepos);
     }
-    fetchShowcaseRepos(); // Initial fetch for GitHub repos
+
+    fetchShowcaseRepos();
 
     // --- Medium Articles Logic ---
     let allMediumArticles = [];
@@ -203,7 +220,7 @@
                 if (data.status === 'ok' && data.items && data.items.length > 0) {
                     allMediumArticles = data.items;
                     currentMediumIndex = 0;
-                    mediumArticlesContainer.innerHTML = ''; // Clear loading skeleton
+                    mediumArticlesContainer.innerHTML = '';
                     displayNextMediumArticles();
                 } else {
                     throw new Error('No articles found or API error.');
@@ -219,6 +236,10 @@
     }
     
     function displayNextMediumArticles() {
+        if (loadMoreMediumButton) {
+            loadMoreMediumButton.classList.add('loading');
+        }
+
         const endIndex = currentMediumIndex + mediumArticlesPerPage;
         const articlesToDisplay = allMediumArticles.slice(currentMediumIndex, endIndex);
 
@@ -239,6 +260,8 @@
         currentMediumIndex = endIndex;
 
         if (loadMoreMediumButton) {
+            loadMoreMediumButton.classList.remove('loading');
+            
             if (currentMediumIndex >= allMediumArticles.length) {
                 loadMoreMediumButton.classList.add('hidden');
             } else {
@@ -250,5 +273,27 @@
     if (loadMoreMediumButton) {
         loadMoreMediumButton.addEventListener('click', displayNextMediumArticles);
     }
+
     fetchMediumArticles();
-</script>
+
+    // Scroll-triggered fade-in animations
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in-section').forEach(section => {
+        observer.observe(section);
+    });
+    </script>
+</body>
+</html>
