@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - feature/automation
+      - dev
   pull_request:
     branches:
       - main
@@ -28,7 +28,7 @@ jobs:
 
       - name: Lint CSS
         run: |
-          stylelint "style.css" # Lints your main CSS file
+          stylelint "style.css"
 
   link_check:
     name: Check Broken Links
@@ -37,11 +37,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install link checker
-        run: |
-          npm install -g broken-link-checker
-
-      - name: Run link checker
-        run: |
-          blc index.html --recursive --exclude "https://rsergio.com" --filter-level 3 || true
-          # Remove '|| true' if you want the workflow to fail on broken links.
+      - name: Link Checker
+        uses: lycheeverse/lychee-action@v1
+        with:
+          args: --verbose --no-progress --exclude "https://rsergio.com" --exclude "linkedin.com" --exclude "medium.com" "**/*.html"
+          fail: true

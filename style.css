@@ -54,7 +54,7 @@ header {
 }
 
 header h1 {
-    font-family: "Roboto", sans-serif; /* Quotes fix */
+    font-family: "Montserrat", sans-serif;
     font-size: 2.8rem;
     font-weight: 700;
     margin-bottom: 8px;
@@ -62,7 +62,7 @@ header h1 {
 }
 
 header p {
-    font-family: "Lato", "Open Sans", Arial, Helvetica, sans-serif; /* Quotes fix */
+    font-family: "Lato", Arial, Helvetica, sans-serif;
     font-size: 1.3rem;
     font-weight: 300;
     letter-spacing: 1px;
@@ -97,7 +97,7 @@ main {
 }
 
 .profile h2 {
-    font-family: "Montserrat", sans-serif; /* Quotes fix */
+    font-family: "Montserrat", sans-serif;
     font-size: 1.7rem;
     margin-bottom: 15px;
     text-align: center;
@@ -105,7 +105,7 @@ main {
 }
 
 .profile p {
-    font-family: "Lato", "Open Sans", Arial, Helvetica, sans-serif; /* Quotes fix */
+    font-family: "Lato", Arial, Helvetica, sans-serif;
     font-size: 1.05rem;
     margin-bottom: 20px;
     text-align: center;
@@ -165,7 +165,7 @@ main {
 }
 
 .repo-card p {
-    font-family: "Lato", "Open Sans", Arial, Helvetica, sans-serif;
+    font-family: "Lato", Arial, Helvetica, sans-serif;
     font-size: 0.98rem;
     margin-bottom: 10px;
     color: #666;
@@ -356,4 +356,58 @@ footer {
         font-size: 1rem;
         padding: 12px 20px;
     }
+}
+
+/* Loading States */
+.loading-skeleton {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.skeleton-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 9%);
+    padding: 25px;
+    width: 300px;
+    margin-bottom: 15px;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.skeleton-title {
+    height: 24px;
+    background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    animation: shimmer 1.5s infinite;
+}
+
+.skeleton-text {
+    height: 16px;
+    background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    animation: shimmer 1.5s infinite;
+}
+
+.skeleton-text:last-child {
+    width: 60%;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.hidden {
+    display: none;
 }
