@@ -9,18 +9,17 @@ Welcome to the repository for my personal portfolio, showcasing my expertise in 
   - **Dynamic GitHub Repositories**: Real-time display of my public repositories using the GitHub API, presented with a "Load More" option for efficient browsing.
   - **Latest Medium Articles**: Fetches and displays recent articles from my Medium.com account, also using a "Load More" feature for concise viewing.
   - **Accessibility & SEO**: Includes skip-to-content navigation, improved focus styles, ARIA labels, and SEO meta tags for better inclusivity and discoverability.
-  - **Automated CI/CD**: Leverages GitHub Actions for Continuous Integration and Continuous Deployment, ensuring code quality, broken link detection, and automatic site updates.
+  - **Loading States**: Skeleton screens provide visual feedback while content loads, improving perceived performance.
 
 -----
 
 ## Technologies Used
 
   - **HTML5 & CSS3**: For the structure and styling of the portfolio.
-  - **JavaScript**: Used to fetch and display dynamic content from GitHub and Medium APIs.
-  - **GitHub Pages**: Hosting this project for easy access and updates.
-  - **GitHub API**: Fetches real-time data on my public repositories.
+  - **Vanilla JavaScript**: Used to fetch and display dynamic content from GitHub and Medium APIs with modern ES6+ patterns.
+  - **GitHub Pages**: Hosting platform for easy access and automatic updates.
+  - **GitHub API**: Fetches real-time data on my public repositories filtered by topic tags.
   - **RSS-to-JSON**: Used to securely fetch and display Medium articles from its RSS feed, bypassing CORS limitations.
-  - **GitHub Actions**: For automating workflows including deployment, code quality checks, and link validation.
 
 -----
 
