@@ -1,8 +1,0 @@
-{
-  "extends": "stylelint-config-standard",
-  "rules": {
-    "font-family-name-quotes": null,
-    "no-descending-specificity": null,
-    "declaration-property-value-keyword-no-deprecated": null
-  }
-}
