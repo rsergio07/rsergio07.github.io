@@ -20,11 +20,32 @@ select:focus {
 }
 
 body {
-    font-family: "Lato", "Open Sans", Arial, Helvetica, sans-serif;
+    font-family: "Lato", Arial, Helvetica, sans-serif;
     background: linear-gradient(to bottom, #1D3557, #13243B);
+    background-attachment: fixed;
     color: #fff;
     line-height: 1.6;
     min-height: 100vh;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 30px 30px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+body > * {
+    position: relative;
+    z-index: 1;
 }
 
 /* Skip Link for Accessibility */
@@ -66,6 +87,7 @@ header p {
     font-size: 1.3rem;
     font-weight: 300;
     letter-spacing: 1px;
+    color: #e2e8f0; /* Softer white, easier on eyes */
 }
 
 /* Divider */
@@ -109,6 +131,8 @@ main {
     font-size: 1.05rem;
     margin-bottom: 20px;
     text-align: center;
+    color: #4a5568; /* Softer gray instead of pure black */
+    line-height: 1.7; /* Slightly more line spacing */
 }
 
 /* Repo List Section & Medium Articles List (Shared Styles) */
@@ -121,11 +145,25 @@ main {
 
 .repo-list h2,
 .medium-articles-list h2 {
-    font-family: "Montserrat", sans-serif; /* Quotes fix */
+    font-family: "Montserrat", sans-serif;
     text-align: center;
     margin-bottom: 40px;
     font-size: 1.7rem;
     color: #fff;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.repo-list h2::after,
+.medium-articles-list h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #2980B9, transparent);
 }
 
 /* Repo Cards & Article Cards (Shared Container & Card Styles) */
@@ -149,12 +187,28 @@ main {
     transition: transform 0.3s;
 }
 
+.repo-card,
+.article-card {
+    background: #fff;
+    color: #222f3e;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 9%);
+    padding: 25px;
+    width: 300px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
 .repo-card:hover,
 .repo-card:focus-within,
 .article-card:hover,
 .article-card:focus-within {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgb(41 128 185 / 13%);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+        0 12px 24px rgb(0 0 0 / 12%),
+        0 4px 8px rgb(0 0 0 / 8%);
+    border-left-color: #2980B9;
 }
 
 .repo-card h3,
