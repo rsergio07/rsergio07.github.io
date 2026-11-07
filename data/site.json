@@ -1,0 +1,293 @@
+{
+  "site": {
+    "url": "https://rsergio.com/",
+    "name": "Sergio Romero Sanchez",
+    "shortName": "Sergio Romero",
+    "role": "Solutions Architect & Site Reliability Engineer",
+    "title": "Sergio Romero — Solutions Architect & Site Reliability Engineer",
+    "description": "Solutions Architect and Certified Expert Site Reliability Engineer. Twenty years across customer-facing technical consulting and hands-on platform operations: Kubernetes, Terraform, multi-cloud, observability. Based in Costa Rica.",
+    "locality": "San Jose",
+    "country": "CR",
+    "year": 2026
+  },
+  "hero": {
+    "lead": "Twenty years on both sides of the table: scoping and designing systems with the people who pay for them, then running the platforms underneath in production. Based in Costa Rica.",
+    "links": [
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/in/romero-sergio/"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/rsergio07"
+      },
+      {
+        "label": "Medium",
+        "href": "https://medium.com/@sergiors07"
+      }
+    ]
+  },
+  "about": {
+    "heading": "Approach",
+    "paragraphs": [
+      "Seven of those twenty years were customer-facing. As Lead Solutions Architect at IBM I ran on-site requirement sessions with CIOs and technical stakeholders, designed hybrid and multi-cloud target architectures, presented and demoed them to executive and engineering audiences, and stayed with the work through implementation and handoff. At VMware I owned a cloud lab platform end to end — qualifying leads, running discovery calls, delivering live demos, guiding customers to the right subscription — while running the vSphere and NSX infrastructure the platform depended on.",
+      "The other side is production. Reliability engineering, SLOs and error budgets, observability, Infrastructure as Code, incident response, and cloud cost optimization across AWS, Azure, GCP, Kubernetes, and OpenShift. The reason both halves matter together: an architecture you have never operated is a guess, and a platform you cannot explain to the person funding it does not get funded.",
+      "Outside of delivery work I mentor engineers moving into reliability roles, and I write about what breaks and why. Native Spanish, fluent English."
+    ]
+  },
+  "timeline": {
+    "heading": "Track record",
+    "note": "Continuous since 2006.",
+    "entries": [
+      {
+        "role": "Senior Site Reliability Engineer",
+        "org": "IBM",
+        "start": "2024",
+        "end": "now",
+        "current": true,
+        "summary": "Production operations for a data platform across AWS, GCP, and IBM Cloud. Kubernetes, Terraform, Argo CD, Prometheus, Grafana, SLO and error-budget definition, incident response."
+      },
+      {
+        "role": "Site Reliability Engineer",
+        "org": "VMware",
+        "start": "2019",
+        "end": "2024",
+        "summary": "Owned a cloud training and demo platform end to end: customer discovery and live demos on one side, vSphere and NSX infrastructure on the other. Cut deployment time 25% with Terraform and Ansible."
+      },
+      {
+        "role": "Lead Solutions Architect",
+        "org": "IBM",
+        "start": "2016",
+        "end": "2019",
+        "summary": "Customer-facing architecture engagements. Requirement sessions with CIOs and technical stakeholders, hybrid and multi-cloud design, solution demos, delivery oversight through handoff."
+      },
+      {
+        "role": "Senior Linux System Administrator",
+        "org": "IBM",
+        "start": "2013",
+        "end": "2016",
+        "summary": "Enterprise Linux and virtualization administration across on-premises and cloud environments. Promoted into the architect role."
+      },
+      {
+        "role": "Linux System Administrator",
+        "org": "Hewlett-Packard",
+        "start": "2007",
+        "end": "2013",
+        "summary": "Global enterprise Linux administration, VMware virtualization, and automation scripting for monitoring, patching, and provisioning."
+      },
+      {
+        "role": "Technical Support Specialist",
+        "org": "Sykes",
+        "start": "2006",
+        "end": "2007",
+        "summary": "Bilingual technical support for networking and connectivity issues, in English and Spanish. Where the twenty years start."
+      }
+    ]
+  },
+  "certifications": {
+    "heading": "Certifications",
+    "items": [
+      {
+        "name": "Site Reliability Engineer Profession",
+        "issuer": "IBM",
+        "abbr": "Expert, Level 2"
+      },
+      {
+        "name": "Certified Kubernetes Administrator",
+        "issuer": "The Linux Foundation",
+        "abbr": "CKA"
+      },
+      {
+        "name": "Certified Solution Architect",
+        "issuer": "The Open Group"
+      },
+      {
+        "name": "Linux Administrator",
+        "issuer": "Linux Professional Institute",
+        "abbr": "LPIC-1"
+      },
+      {
+        "name": "Linux+",
+        "issuer": "CompTIA"
+      }
+    ]
+  },
+  "projects": {
+    "heading": "Projects",
+    "note": "Public repositories. Each one is a working lab, not a sample.",
+    "allHref": "https://github.com/rsergio07",
+    "allLabel": "Everything on GitHub",
+    "items": [
+      {
+        "name": "AWS DevOps GitOps Platform",
+        "href": "https://github.com/rsergio07/aws-devops-gitops-platform",
+        "summary": "Platform engineering on AWS with Terraform, EKS, and Argo CD, including keyless CI/CD through GitHub OIDC.",
+        "tags": [
+          "Terraform",
+          "EKS",
+          "Argo CD"
+        ]
+      },
+      {
+        "name": "SRE Resilience Lab",
+        "href": "https://github.com/rsergio07/sre-resilience-lab-simple",
+        "summary": "Chaos engineering from zero: break pods with LitmusChaos, measure recovery time, verify availability during failure.",
+        "tags": [
+          "LitmusChaos",
+          "Kubernetes"
+        ]
+      },
+      {
+        "name": "AWS Cloud Practitioner Hands-On",
+        "href": "https://github.com/rsergio07/aws-clf-c02-hands-on",
+        "summary": "Short, focused AWS activities that give CLF-C02 candidates real exposure to core services before the exam.",
+        "tags": [
+          "AWS",
+          "Training"
+        ]
+      },
+      {
+        "name": "CKA Study Guide",
+        "href": "https://github.com/rsergio07/cka-study-guide",
+        "summary": "Exam preparation built from operational practice: hands-on examples, simulators, and the failure modes that actually come up.",
+        "tags": [
+          "Kubernetes",
+          "Certification"
+        ]
+      },
+      {
+        "name": "AWS Instance Scheduler",
+        "href": "https://github.com/rsergio07/aws-instance-scheduler",
+        "summary": "Terraform automation for EC2 uptime windows. Start/stop scheduling that takes a visible bite out of monthly spend.",
+        "tags": [
+          "Terraform",
+          "FinOps"
+        ]
+      },
+      {
+        "name": "AWS Terraform + Packer",
+        "href": "https://github.com/rsergio07/aws-terraform-packer-nginx",
+        "summary": "End-to-end environment provisioning: VPC, subnets, security groups, and an Nginx application behind a load balancer.",
+        "tags": [
+          "Terraform",
+          "Packer"
+        ]
+      }
+    ]
+  },
+  "writing": {
+    "heading": "Writing",
+    "note": "Published in AWS in Plain English.",
+    "allHref": "https://medium.com/@sergiors07",
+    "allLabel": "Everything on Medium",
+    "items": [
+      {
+        "title": "SRE + AI: where automation breaks, and humans still matter",
+        "href": "https://medium.com/aws-in-plain-english/sre-ai-where-automation-breaks-and-humans-still-matter-b97809b1077c",
+        "date": "2026-04",
+        "dateLabel": "April 2026"
+      },
+      {
+        "title": "Building production-ready multi-agent systems on Kubernetes",
+        "href": "https://medium.com/aws-in-plain-english/building-production-ready-multi-agent-systems-on-kubernetes-real-lessons-from-deploying-11-b01976cd4236",
+        "date": "2025-09",
+        "dateLabel": "September 2025"
+      },
+      {
+        "title": "The truth about SRE onboarding",
+        "href": "https://medium.com/aws-in-plain-english/the-truth-about-sre-onboarding-how-to-make-new-hires-succeed-faster-b1ea43a21704",
+        "date": "2025-09",
+        "dateLabel": "September 2025"
+      },
+      {
+        "title": "Distributed resilience: bringing agentic AI into Kubernetes",
+        "href": "https://medium.com/aws-in-plain-english/distributed-resilience-how-i-brought-agentic-ai-into-kubernetes-17f261ba81db",
+        "date": "2025-08",
+        "dateLabel": "August 2025"
+      },
+      {
+        "title": "An 8-day SRE onboarding plan that covers soft and technical skills",
+        "href": "https://medium.com/aws-in-plain-english/how-i-structure-an-8-day-sre-onboarding-plan-to-cover-soft-and-technical-skills-4b31b296be62",
+        "date": "2025-08",
+        "dateLabel": "August 2025"
+      },
+      {
+        "title": "Mentorship in SRE: why sharing knowledge is the best investment",
+        "href": "https://medium.com/aws-in-plain-english/mentorship-in-sre-why-sharing-your-knowledge-is-the-best-investment-db9045751a14",
+        "date": "2025-07",
+        "dateLabel": "July 2025"
+      },
+      {
+        "title": "From IT to SRE: the journey and the skills that made it possible",
+        "href": "https://medium.com/aws-in-plain-english/from-it-to-sre-my-journey-and-the-skills-that-made-it-possible-76398dfd185d",
+        "date": "2025-07",
+        "dateLabel": "July 2025"
+      }
+    ]
+  },
+  "labs": {
+    "enabled": true,
+    "_comment": "Set enabled to true and run `python3 build.py` to publish this section. While false, nothing below is written into index.html, sitemap.xml, or the JSON-LD.",
+    "heading": "Labs on video",
+    "channelName": "Reliability Bench",
+    "channelHandle": "@reliabilitybench",
+    "channelHref": "https://www.youtube.com/@reliabilitybench",
+    "note": "Short, run-it-yourself Kubernetes labs. Every episode has a repository you can clone and break.",
+    "allLabel": "The channel",
+    "items": [
+      {
+        "title": "Chaos on a kind cluster",
+        "repo": "chaos-kind-lab",
+        "href": "https://github.com/rsergio07/chaos-kind-lab",
+        "summary": "Stand up a local kind cluster, inject pod failures, and watch what recovery actually looks like."
+      },
+      {
+        "title": "Pod requests and limits",
+        "repo": "pod-limits-lab",
+        "href": "https://github.com/rsergio07/pod-limits-lab",
+        "summary": "What throttling and OOMKills look like from the inside, and how to size a workload on evidence rather than habit."
+      },
+      {
+        "title": "Draining a node without an outage",
+        "repo": "node-drain-lab",
+        "href": "https://github.com/rsergio07/node-drain-lab",
+        "summary": "Pod disruption budgets, graceful termination, and the drain that takes your service down anyway."
+      },
+      {
+        "title": "Horizontal pod autoscaling",
+        "repo": "hpa-autoscaling-lab",
+        "href": "https://github.com/rsergio07/hpa-autoscaling-lab",
+        "summary": "Drive load at a deployment, watch the HPA react, and find the lag between demand and capacity."
+      },
+      {
+        "title": "Burn-rate alerts on an SLO",
+        "repo": "slo-burn-rate-lab",
+        "href": "https://github.com/rsergio07/slo-burn-rate-lab",
+        "summary": "Multi-window burn-rate alerting end to end: define the objective, spend the budget, catch it before the quarter does."
+      },
+      {
+        "title": "Error budgets, explained",
+        "summary": "Why an error budget is a spending decision rather than a reliability target, and what changes once a team treats it that way."
+      }
+    ]
+  },
+  "footer": {
+    "links": [
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/in/romero-sergio/",
+        "icon": "linkedin"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/rsergio07",
+        "icon": "github"
+      },
+      {
+        "label": "Medium",
+        "href": "https://medium.com/@sergiors07",
+        "icon": "medium"
+      }
+    ]
+  }
+}

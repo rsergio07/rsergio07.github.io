@@ -1,0 +1,32 @@
+name: verify-build
+
+# index.html is generated from data/site.json by build.py and committed.
+# This job regenerates it and fails if the committed copy is out of date,
+# so the published site can never drift from the data file.
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Regenerate
+        run: python3 build.py
+
+      - name: Check committed output matches data/site.json
+        run: |
+          if ! git diff --quiet -- index.html sitemap.xml robots.txt; then
+            echo "::error::Generated files are stale. Run 'python3 build.py' and commit the result."
+            git --no-pager diff --stat -- index.html sitemap.xml robots.txt
+            exit 1
+          fi
+          echo "Generated files are in sync."
