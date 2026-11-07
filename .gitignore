@@ -20,3 +20,6 @@ package.json
 
 # OS
 Thumbs.db
+
+# build.py font cache (tools/gen_assets.py)
+.fontcache/
